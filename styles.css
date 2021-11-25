@@ -1,0 +1,776 @@
+body {
+    margin: 0;
+    background-color: #c4e1e1;
+    font-size: 16px;
+    font-family: -apple-system,BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "NotoSans", sans-serif;
+
+}
+
+.create-process-panel-container {
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 0;
+    filter: drop-shadow(0px 0px 0px #00000033);
+    position: absolute;
+    right: 5%;
+    top: 110px;
+    padding: 30px;
+    display: none;
+}
+
+
+
+li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 3%;
+    cursor: pointer;
+    font-size: 18px;
+    color: #032f8e;
+}
+
+nav {
+    display: inline-block;
+    width: 43%;
+    margin-left: 254px;
+    position: relative;
+}
+
+.nav a {
+    color: #6b7280;
+    text-decoration: auto;
+}
+
+a:hover {
+    color: #5A67D8;
+}
+
+ul {
+    padding: 0;
+} 
+
+
+
+input, select {
+    margin: 20px 0px;
+    display: block;
+    width: 50%;
+    height: 25px;
+    padding: 10px;
+    border: 0px;
+    border-bottom: 2px solid #03a9f4;
+    font-size: 16px;
+    font-family: -apple-system,BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "NotoSans", sans-serif;
+    color: slategrey;
+}
+
+
+select#typeProcess {
+    height: 45px;
+    width: 220px;
+}
+
+input:focus-visible, select:focus-visible {
+    outline: none;
+    border-bottom: 2px solid #03a9f4;
+}
+
+
+input, select {
+    margin: 20px 0px;
+    display: block;
+    width: 375px;
+    height: 25px;
+    padding: 10px;
+    border: 0px;
+    border-bottom: 2px solid #cbd0d2;
+    font-size: 16px;
+    font-family: -apple-system,BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "NotoSans", sans-serif;
+    color: #969da4;
+}
+
+h6 {
+    font-size: 16px;
+    margin: 0;
+    color: #3d5051;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+
+input.procInfoField {
+    display: inline;
+    width: 172px;
+    margin-right: 5px;
+}
+
+#generateProcess {
+    top: 360px;
+    background-color: #e91e63;
+    width: 170px;
+    height: 60px;
+}
+
+.processImg{
+    width:50px;
+    display: block;
+}
+
+
+/*HEADER CODE*/
+img#logo {
+    width: 60px;
+    margin: 10px;
+    position: absolute;
+    top: -5%;
+    left: 2%;
+}
+
+select#algo {
+    position: absolute;
+    top: 1%;
+    right: 22%;
+    width: 90px;
+    height: 42px;
+}
+
+
+#mainNav{
+    display: none;
+    width: 570px;
+    position: absolute;
+    top: 2%;
+    left: 12%;
+
+}
+
+button, .gproc {
+    padding: 15px;
+    border: 0px;
+    filter: drop-shadow(0px 2px 3px #00000033);
+    color: white;
+    font-size: 18px;
+    font-family: -apple-system,BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "NotoSans", sans-serif;
+    background-color: #03a9f4;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    top: 17%;
+}
+
+header {
+    grid-area: header;
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    filter: drop-shadow(2px 4px 6px #00000022);
+    z-index: 1;
+}
+
+
+main{
+    grid-area: main;
+    height: 653px;
+    /* z-index: -1; */
+}
+
+#wires{
+    position: absolute;
+    display: block;
+    width: 72%;
+    height: 651px;
+    z-index: -1;
+}
+
+hr.bhline, hr.rhline, hr.rshline, hr.bqhline{
+    height: 5px;
+    background-color: #03a9f4;
+    border: none;
+    width: 30px;
+    display: inline;
+    position: absolute;
+    left: 75px;
+}
+
+hr.bnode, hr.rnode, hr.rsnode {
+    width: 10px !important;
+    left: 70px;
+    height: 10px;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #03a9f4;
+    display: inline;
+    position: absolute;
+    border: none;
+}
+
+hr.bvline, hr.rvline, hr.rsvline{
+    width: 5px;
+    left: 100px;
+    height: 472px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #03a9f4;
+    display: inline;
+    position: absolute;
+    border: none;
+    top: 53px;
+}
+
+hr.rvline {
+    top: 151px;
+    height: 15px !important;
+    left: 200px;
+}
+
+
+hr.bnode.bnode6 {
+    top: 517px;
+}
+
+hr.bnode.bnode5{
+    top: 429px;
+}
+
+hr.bnode.bnode4{
+    top: 349px;
+}
+
+hr.bnode.bnode3 {
+    top: 267px;
+}
+
+hr.bnode.bnode2 {
+    top: 187px;
+}
+
+hr.bnode.bnode1 {
+    top: 102px;
+}
+
+
+hr.bhline.bhline6 {
+    top: 520px;
+}
+
+hr.bhline.bhline5{
+    top: 432px;
+}
+
+hr.bhline.bhline4{
+    top: 352px;
+}
+
+hr.bhline.bhline3 {
+    top: 270px;
+}
+
+hr.bhline.bhline2 {
+    top: 190px;
+}
+
+hr.bhline.bhline1 {
+    top: 105px;
+}
+
+
+
+hr.bhline.bhline7 {
+    top: 50px;
+    left: 100px;
+    width: 65px;
+}
+
+
+hr.bvline.bvline2 {
+    left: 173px;
+    height: 103px;
+}
+
+
+hr.rhline.rhline2 {
+    top: 151px;
+    left: 173px;
+    width: 720px;
+}
+
+
+.rneven{    
+    top: 161px;
+    transform: rotateZ(270deg);
+}
+
+hr.rnode12 {
+    left: 665px;
+}
+hr.rnode10 {
+    left: 590px;
+}
+hr.rnode8 {
+    left: 515px;
+}
+hr.rnode6 {
+    left: 440px;
+}
+hr.rnode4 {
+    left: 365px;
+}
+hr.rnode2 {
+    left: 738px;
+}
+
+.rnodd{
+
+    transform: rotateZ(90deg);
+}
+
+hr.rnode11 {
+    top: 161px;
+    left: 665px;
+}
+hr.rnode12 {
+    top: 161px;
+    left: 665px;
+}
+
+
+hr.rvline.rvline12 {
+    left: 668px;
+}
+hr.rvline.rvline10 {
+    left: 593px;
+}
+hr.rvline.rvline8 {
+    left: 518px;
+}
+hr.rvline.rvline6 {
+    left: 443px;
+}
+hr.rvline.rvline4 {
+    left: 368px;
+}
+hr.rvline.rvline2 {
+    left: 741px;
+}
+
+
+
+
+hr.rvline.rvline11 {
+    top: 140px;
+    left: 640px;
+}
+
+hr.rvline.rvline9 {
+    top: 140px;
+    left: 570px;
+}
+
+hr.rvline.rvline7 {
+    top: 140px;
+    left: 495px;
+}
+
+hr.rvline.rvline5 {
+    top: 140px;
+    left: 420px;
+}
+
+hr.rvline.rvline3 {
+    top: 140px;
+    left: 345px;
+}
+
+hr.rvline.rvline1 {
+    top: 140px;
+    left: 717px;
+}
+
+hr.rnode.rnode11.rnodd {
+    top: 136px;
+    left: 638px;
+}
+hr.rnode.rnode9.rnodd {
+    top: 136px;
+    left: 568px;
+}
+hr.rnode.rnode7.rnodd {
+    top: 136px;
+    left: 492px;
+}
+hr.rnode.rnode5.rnodd {
+    top: 136px;
+    left: 418px;
+}
+hr.rnode.rnode3.rnodd {
+    top: 136px;
+    left: 343px;
+}
+hr.rnode.rnode1.rnodd {
+    top: 136px;
+    left: 715px;
+}
+
+
+menu{
+    grid-area: menu;
+    height: 693px;
+    background-color: white;
+    margin: 0;
+    padding: 30px;
+    z-index: 2;
+    border-left: 1px solid #00000022;
+    overflow-y: auto;
+}
+
+.container{
+    display:grid;
+    grid-template-areas: 'header header header header header header header menu' 'main main main main main main main menu';
+}
+
+
+
+
+
+/*READY QUEUE*/
+
+
+
+
+#blockQueue{
+    top: 76%;
+}
+
+.temp{    
+    margin: 0px!important;
+    width: 400px;
+    padding: 35px 30px!important;
+}
+
+.queue{
+    height: 78px!important;
+    width: 470px!important;
+}
+
+#readyQueue, .queue{
+    width: auto;
+    height: 185px;
+    position: absolute;
+    top: 134px;
+    left: 300px;
+    width: 442px;
+    padding: 20px;
+}
+
+div#readyQueue {
+    height: 201px !important;
+}
+
+.proccessContainer{
+    display: inline-block;
+    background-color: #ffffff;
+    margin: 5px;
+    margin-bottom: 20px;
+    width: 50px;
+    height: 70px;
+    padding: 5px;
+    filter: drop-shadow(0px 0px 4px #00000022);
+}
+
+.dispatcher, .dispatcher_processor {
+    width: 120px;
+    position: absolute;
+    top: 180px;
+    left: 765px;
+}
+
+.dispatcher_processor{
+    top: 175px;
+    left: 900px;
+}
+
+.dispatcher-active{
+    width: 50px;
+    position: absolute;
+    top: 175px;
+    left: 845px;
+}
+
+
+/*BATCH QUEUE*/
+
+#batchJobs{
+    width: auto;
+    height: 490px;
+    position: absolute;
+    width: 70px;
+    padding: 75px 10px;
+}
+
+.jobContainer{
+    display: inline-block;
+    background-color: #ffffff;
+    width: 50px;
+    height: 70px;
+    padding: 5px;
+    margin-bottom: 5px;
+    filter: drop-shadow(0px 0px 4px #00000022);
+}
+
+img#longDispatcher {
+    top: 90px;
+    left: 130px;
+    width: 100px;
+}
+
+img#midDispatcher {
+    top: 325px;
+    left: 185px;
+    width: 100px;
+}
+
+
+/*Overview*/
+.tableFixHead {
+    height: auto;
+    margin-bottom: 40px;
+  }
+  .tableFixHead thead th td{
+    border: 1px solid #dff1ff;
+    position: sticky;
+    top: 0;
+  }
+  table {
+    width: 95%;
+    border: 1px solid #dff1ff;
+    border-collapse: collapse;
+    filter: drop-shadow(0px 0px 4px #00000033);
+    margin: 10px;
+  }
+  th, td {
+    padding: 5px 5px;
+  }
+  
+  th {
+    background: #ffffff;
+    color: #002743;
+    font-weight: 400;
+    text-align: left;
+}
+
+tbody{
+    overflow-y: auto;
+}
+
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+tr:nth-child(odd) {
+    background-color: #f6fdff;
+}
+
+p.index{
+    display: flex;
+    position: absolute;
+    top: -37px;
+    left: -20px;
+    padding: 7px;
+    font-size: 10px;
+    width: 5px;
+    height: 5px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: #03a9f4;
+    color: white;
+}
+
+p.index.ID11 {
+    top: 200px;
+    z-index: 2;
+    left: 450px;
+}
+p.index.ID10 {
+    top: 200px;
+    z-index: 2;
+    left: 375px;
+}
+p.index.ID9 {
+    top: 200px;
+    z-index: 2;
+    left: 300px;
+}
+p.index.ID8 {
+    top: 200px;
+    z-index: 2;
+    left: 225px;
+}
+p.index.ID7 {
+    top: 200px;
+    z-index: 2;
+    left: 150px;
+}
+p.index.ID6 {
+    top: 200px;
+    z-index: 2;
+    left: 75px;
+}
+p.index.ID5 {
+    top: 0px;
+    z-index: 2;
+    left: 450px;
+}
+p.index.ID4 {
+    top: 0px;
+    z-index: 2;
+    left: 375px;
+}
+p.index.ID3 {
+    top: 0px;
+    z-index: 2;
+    left: 300px;
+}
+p.index.ID2 {
+    top: 0px;
+    z-index: 2;
+    left: 225px;
+}
+p.index.ID1 {
+    top: 0px;
+    z-index: 2;
+    left: 150px;
+}
+p.index.ID0 {
+    top: 0px;
+    z-index: 2;
+    left: 75px;
+}
+
+p.index.bID0 {
+    top: 58px;
+    left: 5px;
+    z-index: 2;
+}
+
+p.index.bID1 {
+    top: 148px;
+    left: 5px;
+    z-index: 2;
+}
+
+p.index.bID2 {
+    top: 238px;
+    left: 5px;
+    z-index: 2;
+}
+
+p.index.bID3 {
+    top: 328px;
+    left: 5px;
+    z-index: 2;
+}
+
+p.index.bID4 {
+    top: 416px;
+    left: 5px;
+    z-index: 2;
+}
+
+p.index.bID5 {
+    top: 505px;
+    left: 5px;
+    z-index: 2;
+}
+
+
+
+div#readySusQueue>.proccessContainer, div#blockQueue>.proccessContainer {
+    width: 30px;
+    height: 50px;
+    margin: 0px;
+}
+
+#readySusQueue {
+    top: 390px;
+    width: 649px!important;
+}
+
+#blockQueue {
+    top: 490px;
+    width: 649px!important;
+}
+
+
+hr.rshline{
+    top: 285px;
+    left: 245px;
+    width: 585px;
+}
+
+hr.bqhline{
+    top: 488px;
+    left: 340px;
+    width: 630px;
+}
+
+
+hr.rsvline {
+    top: 287px;
+    left: 333px;
+    height: 20px;
+}
+
+hr.rsnode.rsnode0, hr.rsnode.rsnode1, hr.rsnode.rsnode2, hr.rsnode.rsnode3, hr.rsnode.rsnode4,hr.rsnode.rsnode5,hr.rsnode.rsnode6, hr.rsnode.rsnode7, hr.rsnode.rsnode8, hr.rsnode.rsnode9, hr.rsnode.rsnode10,hr.rsnode.rsnode11{
+    top: 305px;
+    transform: rotateZ(270deg);
+    left: 330px;
+}
+
+hr.rsnode.rsnode11 {
+    left: 380px;
+}
+
+hr.rsnode.rsnode10 {
+    left: 424px;
+}
+hr.rsnode.rsnode9 {
+    left: 468px;
+}
+hr.rsnode.rsnode8 {
+    left: 513px;
+}
+hr.rsnode.rsnode7 {
+    left: 557px;
+}
+hr.rsnode.rsnode6 {
+    left: 601px;
+}
+hr.rsnode.rsnode5 {
+    left: 645px;
+}
+
+hr.rsnode.rsnode4 {
+    left: 691px;
+}
+hr.rsnode.rsnode3 {
+    left: 734px;
+}
+hr.rsnode.rsnode2 {
+    left: 779px;
+}
+hr.rsnode.rsnode1 {
+    left: 820px;
+}
+
+hr.rsvline.rsvline10 {
+    left: 782px;
+}
+
+hr.rsvline.rsvline9 {
+    left: 737px;
+}
+
+hr.rsvline.rsvline8 {
+    left: 694px;
+}
