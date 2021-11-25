@@ -1,11 +1,11 @@
 function selectAlgo(type, from, into){
     switch(type){
         case "srt":
-            // console.log("srt algorithm called")
+            console.log("srt algorithm called")
             srt(from, into);
             break;
-        case "spt":
-            spt(from, into);
+        case "spn":
+            spn(from, into);
             break;
         case "fcfs":
             fcfs(from, into);
@@ -17,10 +17,6 @@ function selectAlgo(type, from, into){
             priority(from, into);
     }
 }
-
-
-
-
 
 
 // check if array is empty
@@ -56,3 +52,4 @@ function countSpace(arry){
 
     return count;
 }
+

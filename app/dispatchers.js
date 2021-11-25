@@ -7,6 +7,7 @@ var output= "";
 var routput= "";
 var boutput= "";
 var werwed = 0;
+var currAlgo;
 
 
 var dispatcherRunning = setInterval(()=> {
@@ -49,6 +50,7 @@ var dispatcherRunning = setInterval(()=> {
 
         if(!isEmpty(readyArray[0]) && processor[0].length == 0 && lock==false){
             block = true;
+            currAlgo = algotype;
             // console.log(readyArray);
             selectAlgo(algotype, readyArray, processor);
 
@@ -69,7 +71,7 @@ var dispatcherRunning = setInterval(()=> {
             lock = true;       
             // console.log(batchArray)    
             //setInterval(()=> {console.log(batchArray)}, 1000);
-            
+            currAlgo = algotype;
             werwed = batchArray[0][0][3]
             selectAlgo("priority", batchArray, readyArray);
         }
