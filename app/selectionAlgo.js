@@ -1,7 +1,6 @@
 function selectAlgo(type, from, into){
     switch(type){
         case "srt":
-            console.log("srt algorithm called")
             srt(from, into);
             break;
         case "spn":

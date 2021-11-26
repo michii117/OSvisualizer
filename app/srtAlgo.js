@@ -33,8 +33,10 @@ function srt(from, into){
             if(into[0][i] == 0){
                 into[0][i] = x;
                 // console.log("problem: " + from[1] + " ans: " + from[0])
-                // console.log("problem: " + into[1] + " ans: " + into[0])
+                console.log("From: " + from[1] + " Into: " + into[1] + " i: " + i + " index: " + index)
+
                 animateMove(from[1], i, into, index);
+                break;
             }
             
         }
@@ -43,7 +45,7 @@ function srt(from, into){
     // Unlocks short term dispatcher
     lock = false;
     block = false;
-    
+    midlock = false;
 
     
 }

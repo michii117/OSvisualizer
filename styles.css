@@ -24,10 +24,11 @@ body {
 li {
     list-style-type: none;
     display: inline-block;
-    padding: 3%;
+    padding: 2%;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 14px;
     color: #032f8e;
+    margin: 0px !important;
 }
 
 nav {
@@ -90,7 +91,7 @@ input, select {
     color: #969da4;
 }
 
-h6 {
+h6,li {
     font-size: 16px;
     margin: 0;
     color: #3d5051;
@@ -117,6 +118,11 @@ input.procInfoField {
     display: block;
 }
 
+.processImg2{
+    width:30px;
+    display: block;
+}
+
 
 /*HEADER CODE*/
 img#logo {
@@ -137,11 +143,11 @@ select#algo {
 
 
 #mainNav{
-    display: none;
-    width: 570px;
+    display: inline-block;
+    width: 430px;
     position: absolute;
-    top: 2%;
-    left: 12%;
+    top: 20px;
+    margin: 0px;
 
 }
 
@@ -183,7 +189,7 @@ main{
     z-index: -1;
 }
 
-hr.bhline, hr.rhline, hr.rshline, hr.bqhline{
+hr.bhline, hr.rhline, hr.rshline, hr.bqhline,hr.chline{
     height: 5px;
     background-color: #03a9f4;
     border: none;
@@ -193,7 +199,7 @@ hr.bhline, hr.rhline, hr.rshline, hr.bqhline{
     left: 75px;
 }
 
-hr.bnode, hr.rnode, hr.rsnode {
+hr.bnode, hr.rnode, hr.rsnode, hr.bqnode, hr.cnode  {
     width: 10px !important;
     left: 70px;
     height: 10px;
@@ -204,7 +210,7 @@ hr.bnode, hr.rnode, hr.rsnode {
     border: none;
 }
 
-hr.bvline, hr.rvline, hr.rsvline{
+hr.bvline, hr.rvline, hr.rsvline, hr.bqvline,hr.cvline{
     width: 5px;
     left: 100px;
     height: 472px;
@@ -221,6 +227,59 @@ hr.rvline {
     height: 15px !important;
     left: 200px;
 }
+
+/* A.J */
+hr.cvline.cvline0 {
+    top: 24px;
+    left: 276px;
+    height: 132px;
+}
+
+hr.cvline1 {
+    top: 151px;
+    left: 230px;
+    height: 104px;
+}
+
+hr.cvline2 {
+    top: 185px;
+    left: 965px;
+    height: 314px;
+}
+
+hr.cvline3 {
+    top: 20px;
+    left: 965px;
+    height: 75px;
+}
+
+hr.cvline4 {
+    top: 344px;
+    left: 893px;
+    height: 101px;
+}
+
+hr.chline0 {
+    top: 20px;
+    left: 277px;
+    width: 692px;
+}
+
+
+hr.chline1 {
+    top: 342px;
+    left: 816px;
+    width: 81px;
+}
+
+hr.chline2 {
+    top: 439px;
+    left: 816px;
+    width: 81px;
+}
+
+/* A.J */
+
 
 
 hr.bnode.bnode6 {
@@ -290,7 +349,7 @@ hr.bvline.bvline2 {
 hr.rhline.rhline2 {
     top: 151px;
     left: 173px;
-    width: 720px;
+    width: 752px;
 }
 
 
@@ -455,7 +514,7 @@ menu{
     width: auto;
     height: 185px;
     position: absolute;
-    top: 134px;
+    top: 133px;
     left: 300px;
     width: 442px;
     padding: 20px;
@@ -465,7 +524,7 @@ div#readyQueue {
     height: 201px !important;
 }
 
-.proccessContainer{
+.proccessContainer, .suspendedContainer, .blockedContainer{
     display: inline-block;
     background-color: #ffffff;
     margin: 5px;
@@ -491,8 +550,23 @@ div#readyQueue {
 .dispatcher-active{
     width: 50px;
     position: absolute;
-    top: 175px;
+    top: 185px;
     left: 845px;
+}
+
+img.dispatcher-active.long {
+    top: 85px;
+    left: 200px;
+}
+
+img.dispatcher-active.mid {
+    top: 185px;
+    left: 300px;
+}
+
+img.dispatcher-active.mid {
+    top: 324px;
+    left: 257px;
 }
 
 
@@ -547,7 +621,7 @@ img#midDispatcher {
     margin: 10px;
   }
   th, td {
-    padding: 5px 5px;
+    padding: 2px 5px;
   }
   
   th {
@@ -555,6 +629,10 @@ img#midDispatcher {
     color: #002743;
     font-weight: 400;
     text-align: left;
+}
+
+td{
+    font-size: 14px;
 }
 
 tbody{
@@ -685,7 +763,7 @@ p.index.bID5 {
 
 
 
-div#readySusQueue>.proccessContainer, div#blockQueue>.proccessContainer {
+div#readySusQueue>.suspendedContainer, div#blockQueue>.blockedContainer {
     width: 30px;
     height: 50px;
     margin: 0px;
@@ -705,12 +783,12 @@ div#readySusQueue>.proccessContainer, div#blockQueue>.proccessContainer {
 hr.rshline{
     top: 285px;
     left: 245px;
-    width: 585px;
+    width: 582px;
 }
 
 hr.bqhline{
-    top: 488px;
-    left: 340px;
+    top: 494px;
+    left: 336px;
     width: 630px;
 }
 
@@ -719,6 +797,13 @@ hr.rsvline {
     top: 287px;
     left: 333px;
     height: 20px;
+}
+
+
+hr.bqvline {
+    top: 473px;
+    left: 333px;
+    height: 25px;
 }
 
 hr.rsnode.rsnode0, hr.rsnode.rsnode1, hr.rsnode.rsnode2, hr.rsnode.rsnode3, hr.rsnode.rsnode4,hr.rsnode.rsnode5,hr.rsnode.rsnode6, hr.rsnode.rsnode7, hr.rsnode.rsnode8, hr.rsnode.rsnode9, hr.rsnode.rsnode10,hr.rsnode.rsnode11{
@@ -763,14 +848,154 @@ hr.rsnode.rsnode1 {
     left: 820px;
 }
 
-hr.rsvline.rsvline10 {
-    left: 782px;
+
+
+/* A.J. */
+hr.rsvline.rsvline0 {
+    left: 822px;
+} 
+
+hr.rsvline.rsvline2 {
+    left: 382px;
+}
+hr.rsvline.rsvline3 {
+    left: 426px;
 }
 
-hr.rsvline.rsvline9 {
+hr.rsvline.rsvline4 {
+    left: 470px;
+}
+
+hr.rsvline.rsvline5 {
+    left: 515px;
+}
+
+hr.rsvline.rsvline6 {
+    left: 559px;
+}
+
+hr.rsvline.rsvline7 {
+    left: 603px;
+}
+
+hr.rsvline.rsvline11 {
+    left: 781px;
+}
+
+hr.rsvline.rsvline10 {
     left: 737px;
 }
 
-hr.rsvline.rsvline8 {
-    left: 694px;
+hr.rsvline.rsvline9 {
+    left: 693px;
 }
+
+hr.rsvline.rsvline8 {
+    left: 648px;
+}
+
+
+hr.bqvline.bqvline0 {
+    left: 336px;
+}
+
+hr.bqvline.bqvline2 {
+    left: 381px;
+}
+
+hr.bqvline.bqvline3 {
+    left: 425px;
+}
+
+hr.bqvline.bqvline4 {
+    left: 470px;
+}
+
+hr.bqvline.bqvline5 {
+    left: 514px;
+}
+
+hr.bqvline.bqvline6 {
+    left: 558px;
+}
+
+hr.bqvline.bqvline7 {
+    left: 603px;
+}
+
+hr.bqvline.bqvline8 {
+    left: 647px;
+}
+
+hr.bqvline.bqvline9 {
+    left: 692px;
+}
+
+hr.bqvline.bqvline10 {
+    left: 737px;
+}
+
+hr.bqvline.bqvline11 {
+    left: 782px;
+}
+
+hr.bqvline.bqvline1 {
+    left: 826px;
+}
+
+hr.bqnode0, hr.bqnode1, hr.bqnode2, hr.bqnode3, hr.bqnode4, hr.bqnode5, hr.bqnode6, hr.bqnode7, hr.bqnode8, hr.bqnode9, hr.bqnode10, hr.bqnode11 {
+    transform: rotateZ(90deg);
+    top: 470px;
+    left: 333px;
+}
+
+hr.bqnode.bqnode1 {
+    left: 378px;
+}
+
+hr.bqnode.bqnode2 {
+    left: 422px;
+}
+
+hr.bqnode.bqnode3 {
+    left: 467px;
+}
+
+hr.bqnode.bqnode4 {
+    left: 512px;
+}
+
+hr.bqnode.bqnode5 {
+    left: 555px;
+}
+
+hr.bqnode.bqnode6 {
+    left: 601px;
+}
+
+hr.bqnode.bqnode7 {
+    left: 644px;
+}
+
+hr.bqnode.bqnode8 {
+    left: 689px;
+}
+
+hr.bqnode.bqnode9 {
+    left: 734px;
+}
+
+hr.bqnode.bqnode10 {
+    left: 779px;
+}
+
+hr.bqnode.bqnode11 {
+    left: 823px;
+}
+
+hr.cnode.cnode0 {
+    top: 338px;
+    left: 846px;
+}
+
+/* A.J. */

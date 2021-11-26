@@ -43,4 +43,5 @@ async function priority(from, into){
     // Unlocks short term dispatcher
     lock = false;
     block = false;
+    midlock = false;
 }

@@ -36,6 +36,7 @@ function spn(from, into){
                 // console.log("problem: " + from[1] + " ans: " + from[0])
                 // console.log("problem: " + into[1] + " ans: " + into[0])
                 animateMove(from[1], i, into, index);
+                break;
             }
             
         }
@@ -44,7 +45,7 @@ function spn(from, into){
     // Unlocks short term dispatcher
     lock = false;
     block = false;
-    
+    midlock = false;
 
     
 }

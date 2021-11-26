@@ -2,12 +2,16 @@ var allowNum = 12;
 var processor = [[],"processor"];
 var lock = false;
 var block = false;
+var midlock = false;
 var algotype
 var output= "";
 var routput= "";
 var boutput= "";
+var joutput= "";
+var soutput= "";
 var werwed = 0;
-var currAlgo;
+
+
 
 
 var dispatcherRunning = setInterval(()=> {
@@ -28,15 +32,13 @@ var dispatcherRunning = setInterval(()=> {
         for(var i = 0; i < batchArray[0].length; i++){
             if(batchArray[0][i] != 0){
                 batchArray[0][i][3] = batchArray[0][i][3] + 1
-                boutput = `<tr><td>${i}</td><td>${batchArray[0][i][0]}</td><td>${batchArray[0][i][2].length}</td><td>${batchArray[0][i][1]}</td><td>${batchArray[0][i][3]}</td><tr>`
-                batchData[i].innerHTML = boutput;
+                joutput = `<tr><td>${i}</td><td>${batchArray[0][i][0]}</td><td>${batchArray[0][i][2].length}</td><td>${batchArray[0][i][1]}</td><td>${batchArray[0][i][3]}</td><tr>`
+                batchData[i].innerHTML = joutput;
             }else{
-                boutput = `<tr><td>${i}</td><td> </td><td> </td><td> </td><td> </td><tr>`
-                batchData[i].innerHTML = boutput;
+                joutput = `<tr><td>${i}</td><td> </td><td> </td><td> </td><td> </td><tr>`
+                batchData[i].innerHTML = joutput;
             }
         }
-
-        
 
         // console.log(readyArray[0])
 
@@ -50,13 +52,25 @@ var dispatcherRunning = setInterval(()=> {
 
         if(!isEmpty(readyArray[0]) && processor[0].length == 0 && lock==false){
             block = true;
-            currAlgo = algotype;
+            lock = true;
+            midlock = true;
             // console.log(readyArray);
             selectAlgo(algotype, readyArray, processor);
 
         }
 
         
+
+        if(countSpace(suspendedArray[0]) != 12 && countSpace(readyArray[0]) > 2 && midlock == false){
+            block = true;
+            lock = true;
+            midlock = true;
+
+            console.log("Medium Term Scheduling...")
+            selectAlgo(algotype, suspendedArray, readyArray);
+        }
+
+
         
         // console.log(isEmpty(batchArray[0]) == false && isFull(readyArray[0]) == false && block==false && countSpace(readyArray[0]) >= 7);
         // console.log(isEmpty(batchArray[0]) == false)
@@ -66,12 +80,12 @@ var dispatcherRunning = setInterval(()=> {
         // console.log(countSpace(readyArray[0]))
 
         //clearInterval(dispatcherRunning)
-        if(isEmpty(batchArray[0]) == false && isFull(readyArray[0]) == false && block==false && countSpace(readyArray[0]) > 6){
+        if(isEmpty(batchArray[0]) == false && isFull(readyArray[0]) == false && block==false && countSpace(readyArray[0]) > 6 && countSpace(suspendedArray[0]) == 12){
             block = true;
-            lock = true;       
+            lock = true;     
+            midlock = true;  
             // console.log(batchArray)    
             //setInterval(()=> {console.log(batchArray)}, 1000);
-            currAlgo = algotype;
             werwed = batchArray[0][0][3]
             selectAlgo("priority", batchArray, readyArray);
         }
@@ -92,6 +106,82 @@ var dispatcherRunning = setInterval(()=> {
         //     }
         // }
 
+        suspendedAction();
+        blockedAction();
     
 }, 1000);
 
+
+
+var interrupt = 4;
+
+async function blockedAction(){
+
+    // Check if blockArray is empty
+    if(countSpace(blockArray[0]) != 12){
+
+        // console.log("Block Array Populated")
+
+        for(var i = 0; i < blockArray[0].length; i++){
+
+            if(blockArray[0][i] != 0){
+                // console.log("Processing interrupt...")
+                
+                
+
+                boutput = `<tr> <td>${i}</td> <td>${blockArray[0][i].ID}</td> <td>${blockArray[0][i].content[0]}</td> <td>${blockArray[0][i].content[1]}</td> <td>${blockArray[0][i].w}</td><tr>`
+                blockData[i].innerHTML = boutput
+
+                blockArray[0][i].w = blockArray[0][i].w + 1;
+
+                if(blockArray[0][i].content[1] == interrupt){
+
+                    boutput = `<tr><td>${i}</td><td> </td><td> </td><td> </td><td> </td><tr>`
+                    blockData[i].innerHTML = boutput
+
+                    blockArray[0][i].content[0] = 0;
+    
+                    var popped = blockArray[0][i];
+                    blockArray[0][i] = 0;
+
+                    index = i;
+    
+                    for(var j = 0; j < suspendedArray[0].length; j++){
+                        if(suspendedArray[0][j] == 0){
+                            // console.log("Store in suspended queue...")
+                            suspendedArray[0][j] = popped;
+                            await animateMove(blockArray[1], j, suspendedArray, index);
+                            break;
+                        }
+                    } 
+    
+                }else{
+                    blockArray[0][i].content[1] = blockArray[0][i].content[1] + 1;
+                    // console.log(blockArray[0][i])
+                }
+                
+            }
+            
+        }
+
+    }
+     
+}
+
+
+
+
+function suspendedAction(){
+
+    if(countSpace(suspendedArray[0]) != 12){
+        for(var i = 0; i < suspendedArray[0].length; i++){
+            if(suspendedArray[0][i] != 0){
+                suspendedArray[0][i].w = suspendedArray[0][i].w + 1;
+                console.log("Suspended table should be updating")
+                soutput = `<tr><td>${i}</td><td>${suspendedArray[0][0].ID}</td><td>${suspendedArray[0][0].s}</td><td>${suspendedArray[0][0].e}</td><td>${suspendedArray[0][0].w}</td><td>${suspendedArray[0][0].content[0]}</td><tr>`
+                susData[i].innerHTML = soutput
+            }
+        }
+    }
+
+}

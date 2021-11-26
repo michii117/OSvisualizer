@@ -16,18 +16,18 @@
                     <button id="generateJob">Generate Job</button>
                     <img src="images/logo.gif" alt="" id="logo">
                     <select name="algo" id="algo">
-                        <option value="srt" selected>SRT</option>
+                        <option value="srt" >SRT</option>
                         <option value="spn">SPN</option>
-                        <option value="fcfs">FCFS</option>
+                        <option value="fcfs" selected>FCFS</option>
                         <option value="hrrn">HRRN</option>
                     </select>
                     
 
-                    <ul id="mainNav">
+                    <!-- <ul id="mainNav">
                         <li>Home</li>
                         <li>Visualizer</li>
                         <li>Team</li>
-                    </ul>
+                    </ul> -->
                 </div>
 
                 <!-- <div class="create-process-panel-container">
@@ -55,7 +55,8 @@
             <main>
 
 
-                <img src='images/dispatcher.gif' alt="dispather bot" class="dispatcher" id="longDispatcher">
+                <img src='images/dispatcher.gif' alt="dispather bot" class="dispatcher" id="longDispatcher">                
+                <img src="images/processingAnimationg.gif" alt="dispather bot" class="dispatcher-active long">
                 <div id="batchJobs" class="batchContainer">
                     <p class="index bID0">0</p>
                     <div class="jobContainer"></div>
@@ -112,81 +113,83 @@
                 </div>
 
                 <img src="images/dispatcher.gif" alt="dispather bot" class="dispatcher" id="midDispatcher">
+                    <img src="images/processingAnimationg.gif" alt="dispather bot" class="dispatcher-active mid">
                 <div id="readySusQueue" class="queue">
+                    
                     <!-- <p class="index ID0">0</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="suspendedContainer"></div>
                     
                     <!-- <p class="index ID1">1</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="suspendedContainer"></div>
                     
                     <!-- <p class="index ID2">2</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="suspendedContainer"></div>
                     
                     <!-- <p class="index ID3">3</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="suspendedContainer"></div>
                     
                     <!-- <p class="index ID4">4</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="suspendedContainer"></div>
                     
                     <!-- <p class="index ID5">5</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="suspendedContainer"></div>
                     
                     <!-- <p class="index ID6">6</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="suspendedContainer"></div>
                     
                     <!-- <p class="index ID7">7</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="suspendedContainer"></div>
                     
                     <!-- <p class="index ID8">8</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="suspendedContainer"></div>
                     
                     <!-- <p class="index ID9">9</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="suspendedContainer"></div>
                     
                     <!-- <p class="index ID10">10</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="suspendedContainer"></div>
                     
                     <!-- <p class="index ID11">11</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="suspendedContainer"></div>
                 </div>
 
 
                 <div id="blockQueue" class="queue">
                     <!-- <p class="index ID0">0</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="blockedContainer"></div>
                     
                     <!-- <p class="index ID1">1</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="blockedContainer"></div>
                     
                     <!-- <p class="index ID2">2</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="blockedContainer"></div>
                     
                     <!-- <p class="index ID3">3</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="blockedContainer"></div>
                     
                     <!-- <p class="index ID4">4</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="blockedContainer"></div>
                     
                     <!-- <p class="index ID5">5</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="blockedContainer"></div>
                     
                     <!-- <p class="index ID6">6</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="blockedContainer"></div>
                     
                     <!-- <p class="index ID7">7</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="blockedContainer"></div>
                     
                     <!-- <p class="index ID8">8</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="blockedContainer"></div>
                     
                     <!-- <p class="index ID9">9</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="blockedContainer"></div>
                     
                     <!-- <p class="index ID10">10</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="blockedContainer"></div>
                     
                     <!-- <p class="index ID11">11</p> -->
-                    <div class="proccessContainer"></div>
+                    <div class="blockedContainer"></div>
                 </div>
 
                 <img src="images/dispatcher.gif" alt="dispather bot" class="dispatcher">
@@ -197,6 +200,19 @@
 
 
                 <div id="wires">
+
+                  <hr class="chline chline0">
+                  <hr class="cvline cvline0">
+                  <hr class="cvline cvline1">
+                  <hr class="cvline cvline2">
+                  <hr class="cvline cvline3">
+                  
+                  <hr class="cnode cnode0">
+                  <hr class="chline chline1">
+                  <hr class="cvline cvline4">
+                  <hr class="chline chline2"> 
+
+
                     <hr class="bhline bhline1">
                     <hr class="bnode bnode1">
                     <hr class="bhline bhline2">
@@ -275,6 +291,31 @@
 
 
                     <hr class="bqhline">
+                    <hr class="bqvline bqvline0">
+                    <hr class="bqnode bqnode0">
+                    <hr class="bqvline bqvline1">
+                    <hr class="bqnode bqnode1">
+                    <hr class="bqvline bqvline2">
+                    <hr class="bqnode bqnode2">
+                    <hr class="bqvline bqvline3">
+                    <hr class="bqnode bqnode3">
+                    <hr class="bqvline bqvline4">
+                    <hr class="bqnode bqnode4">
+                    <hr class="bqvline bqvline5">
+                    <hr class="bqnode bqnode5">
+                    <hr class="bqvline bqvline6">
+                    <hr class="bqnode bqnode6">
+                    <hr class="bqvline bqvline7">
+                    <hr class="bqnode bqnode7">
+                    <hr class="bqvline bqvline8">
+                    <hr class="bqnode bqnode8">
+                    <hr class="bqvline bqvline9">
+                    <hr class="bqnode bqnode9">
+                    <hr class="bqvline bqvline10">
+                    <hr class="bqnode bqnode10">
+                    <hr class="bqvline bqvline11">
+                    <hr class="bqnode bqnode11">
+
 
 
 
@@ -284,9 +325,14 @@
             </main>
             
             <menu>
+                <ul id="mainNav">
+                  <li id="view1">Overview</li>
+                  <li id="view2">Long-term</li>
+                  <li id="view3">Medium-term</li>
+                  <li id="view4">Short-term</li>
+                </ul>
 
-
-                <div class="tableFixHead">
+                <div class="tableFixHead" style="margin-top: 40px;" id="long">
                     <h6>Batch Jobs Queue</h6>
                     <table>
                       <thead>
@@ -311,7 +357,7 @@
 
 
                 <div class="tableFixHead">
-                    <h6>Ready Proccesses Queue</h6>
+                    <h6>Ready Processes Queue</h6>
                     <table>
                       <thead>
                         <tr>
@@ -358,16 +404,77 @@
                     <table>
                       <thead>
                         <tr>
-                          <th>index</th>
+                          <th>Index</th>
                           <th>id</th>
                           <th>s</th>
                           <th>e</th>
                           <th>w</th>
+                          <th>Int</th>
                         </tr>
                       </thead>
                       <tbody id="proccessorBody">
-                          <tr id="proccessordata0"><td>0</td><td></td><td></td><td></td><td></td></tr>
+                          <tr id="proccessordata0"><td>0</td><td></td><td></td><td></td><td></td><td></td></tr>
                       </tbody>
+                    </table>
+                </div>
+
+                <div class="tableFixHead">
+                    <h6>Blocked Table Queue</h6>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Index</th>
+                          <th>id</th>
+                          <th>Int</th>
+                          <th>time</th>
+                          <th>w</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody id="blockedBody">
+                        <tr class="bbody" id="readydata1"><td>0</td><td></td><td> </td><td> </td><td> </td></tr>
+                        <tr class="bbody" id="readydata1"><td>1</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="bbody" id="readydata2"><td>2</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="bbody" id="readydata3"><td>3</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="bbody" id="readydata4"><td>4</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="bbody" id="readydata5"><td>5</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="bbody" id="readydata6"><td>6</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="bbody" id="readydata7"><td>7</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="bbody" id="readydata8"><td>8</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="bbody" id="readydata9"><td>9</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="bbody" id="readydata10"><td>10</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="bbody" id="readydata11"><td>11</td><td></td><td></td><td></td><td></td></tr>
+                    </tbody>
+                    </table>
+                </div>
+
+                <div class="tableFixHead">
+                    <h6>Ready Suspended Table Queue</h6>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Index</th>
+                          <th>id</th>
+                          <th>s</th>
+                          <th>e</th>
+                          <th>w</th>
+                          <th>Int</th>
+                        </tr>
+                      </thead>
+                      <tbody id="susBody">
+                        <tr class="sbody" id="readydata1"><td>0</td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody" id="readydata1"><td>1</td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody" id="readydata2"><td>2</td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody" id="readydata3"><td>3</td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody" id="readydata4"><td>4</td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody" id="readydata5"><td>5</td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody" id="readydata6"><td>6</td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody" id="readydata7"><td>7</td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody" id="readydata8"><td>8</td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody" id="readydata9"><td>9</td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody" id="readydata10"><td>10</td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody" id="readydata11"><td>11</td><td></td><td></td><td></td><td></td><td></td></tr>
+                    </tbody>
                     </table>
                 </div>
             </menu>
@@ -376,6 +483,8 @@
 
     </div>
 
+
+<script src="app/blocked.js"></script>
 <script src="app/animateMoves.js"></script>
 <script src="app/srtAlgo.js"></script>
 <script src="app/priorityAlgo.js"></script>
@@ -387,7 +496,7 @@
 <script src="app/CreateProcessPanelControl.js   "></script>
 <script src="app/createProcess.js"></script>
 <script src="app/selectionAlgo.js"></script>
-<script src="app/algo.js"></script>
+<script src="app/menuNav.js"></script>
 </body>
 </html>
 
