@@ -40,6 +40,8 @@ async function processorAction(x,type){
         }else if(processor[0][0].content[1] == 0 && processor[0][0].content[0] == 1){
             console.log("Interrupt...")
             var val1 = processor[0].pop()
+            output = `<tr><td>0</td><td> </td><td> </td><td> </td><td> </td><td> </td><tr>`
+            processorData.innerHTML = output
             for(var i = 0; i < blockArray[0].length; i++){
                 if(blockArray[0][i] == 0){
                     console.log("Store in blocked...")
