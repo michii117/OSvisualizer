@@ -2,6 +2,8 @@
 
 function srt(from, into){
     
+    console.log("SRT algorithm called...") // System Call
+
     var shortest = 1.7976931348623157E+10308;
     var index = 0;
 
@@ -19,33 +21,13 @@ function srt(from, into){
     
     // Remove selected process from current queue
     var x = from[0][index]
-    // console.log("problem: " + x)
     from[0][index] = 0;
 
-    
-    
     // Moves process into the next queue
-    if(into[1] == "processor"){        
-        animateMove(from[1], i = 0, into, index);
-        processorAction(x, "pre")                
-    }else{
-        for(var i = 0; i < into[0].length; i++){
-            if(into[0][i] == 0){
-                into[0][i] = x;
-                // console.log("problem: " + from[1] + " ans: " + from[0])
-                console.log("From: " + from[1] + " Into: " + into[1] + " i: " + i + " index: " + index)
-
-                animateMove(from[1], i, into, index);
-                break;
-            }
-            
-        }
-    }
+    mover(from, into, i, index, x, "non")
     
     // Unlocks short term dispatcher
     lock = false;
     block = false;
-    midlock = false;
-
-    
+    midlock = false;    
 }

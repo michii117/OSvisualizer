@@ -14,7 +14,7 @@ body {
     filter: drop-shadow(0px 0px 0px #00000033);
     position: absolute;
     right: 5%;
-    top: 76px;
+    top: 110px;
     padding: 30px;
     display: none;
 }
@@ -66,6 +66,10 @@ input, select {
     color: slategrey;
 }
 
+.hideinmenu{
+    display: none!important;
+}
+
 
 select#typeProcess {
     height: 45px;
@@ -77,6 +81,13 @@ input:focus-visible, select:focus-visible {
     border-bottom: 2px solid #03a9f4;
 }
 
+select#menuoverviewcontrol{
+    width: 160px;
+    height: 44px;
+    position: absolute;
+    right: 20px;
+    top: -10px;
+}
 
 input, select {
     margin: 20px 0px;
@@ -178,7 +189,7 @@ header {
 main{
     grid-area: main;
     height: 653px;
-    z-index: -1;
+    margin-left: 30px;
 }
 
 #wires{
@@ -472,27 +483,62 @@ hr.rnode.rnode1.rnodd {
 
 menu{
     grid-area: menu;
-    height: 693px;
+    height: 717px;
     background-color: white;
     margin: 0;
     padding: 30px;
     z-index: 2;
     border-left: 1px solid #00000022;
     overflow-y: auto;
+    padding-top: 6px;
+}
+
+footer{
+    grid-area: footer;
+    height: 753px;
+    background-color: white;
 }
 
 .container{
     display:grid;
-    grid-template-areas: 'header header header header header header header menu' 'main main main main main main main menu';
+    grid-template-areas: 'header header header header header header header header header header header menu' 'main main main main main main main main main main main menu' 'footer footer footer footer footer footer footer footer footer footer footer footer';
 }
 
 
+div#steady{
+    width: 300px;
+}
+
+div#html_console {
+    position: relative;
+    overflow-y: auto;
+    height: 100px;
+    width: 100%;
+    left: 10px;
+    border-bottom: 1px solid #00000022;
+    margin-bottom: 20px;
+}
 
 
 
 /*READY QUEUE*/
 
+p{
+    font-size: 11px;
+}
 
+div#html_console::-webkit-scrollbar {
+    width: 5px;               /* width of the entire scrollbar */
+  }
+  
+  div#html_console::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);        /* color of the tracking area */
+  }
+  
+  div#html_console::-webkit-scrollbar-thumb {
+    background-color: rgb(94, 158, 255);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+  }
 
 
 #blockQueue{
@@ -508,6 +554,7 @@ menu{
 .queue{
     height: 78px!important;
     width: 470px!important;
+    margin-left: 30px;
 }
 
 #readyQueue, .queue{
@@ -540,6 +587,7 @@ div#readyQueue {
     position: absolute;
     top: 180px;
     left: 765px;
+    margin-left: 30px;
 }
 
 .dispatcher_processor{
@@ -552,16 +600,17 @@ div#readyQueue {
     position: absolute;
     top: 185px;
     left: 845px;
+    margin-left: 30px;
 }
 
-img.dispatcher-active.long {
+img.dispatcher-active.longer {
     top: 85px;
     left: 200px;
 }
 
-img.dispatcher-active.mid {
-    top: 185px;
-    left: 300px;
+img.dispatcher-active.midd {
+    top: 320px;
+    left: 255px;
 }
 
 img.dispatcher-active.mid {
@@ -606,7 +655,7 @@ img#midDispatcher {
 /*Overview*/
 .tableFixHead {
     height: auto;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   .tableFixHead thead th td{
     border: 1px solid #dff1ff;
@@ -1000,11 +1049,27 @@ hr.cnode.cnode0 {
 
 /* A.J. */
 
-
-button#generateJob {
-    right: 18%;
+.osPROP{
+    width: 90px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-select#algo {
-    left: 122px;
+div#operatingSystem {
+    position: absolute;
+    width: 825px;
+    height: 99px;
+    top: 645px;
+    left: 175px;
+}
+
+.os-part-holder {
+    margin-left: 30px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.active{
+    color: #03a9f4;
 }

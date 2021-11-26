@@ -2,6 +2,7 @@ var batchArray = [[0,0,0,0,0,0], "batch"];
 var blockArray = [[0,0,0,0,0,0,0,0,0,0,0,0],"block"];
 var suspendedArray = [[0,0,0,0,0,0,0,0,0,0,0,0],"readySus"];
 var readyArray = [[0,0,0,0,0,0,0,0,0,0,0,0],"ready"];
+var backlog = [];
 
 var id = 0;
 var order = 0;
@@ -20,11 +21,15 @@ var susData;
 
 var genProcess;
 
+var consoleMin;
+
+
 
 window.addEventListener("load", (e)=>{
 
+    
     genProcess= document.getElementById("generateJob");
-    genJob = document.getElementById("generateProcess");
+
     processorData = document.getElementById("proccessorBody");
     readyData = document.getElementsByClassName("rbody");
     batchData = document.getElementsByClassName("jbody");
@@ -36,12 +41,16 @@ window.addEventListener("load", (e)=>{
     blockedQueue = document.getElementsByClassName("blockedContainer");
     suspendedQueue = document.getElementsByClassName("suspendedContainer");
 
+    
+    document.getElementById("os-title5").classList.add("active")
+    document.getElementById("os-title4").classList.add("active")
+
+    consoleMin = document.getElementById("html_console")
+
     genProcess.addEventListener("click", async (e)=>{
 
-        // e.preventDefault();
-
-        
-
+        document.getElementById("os-title1").classList.add("active")        
+        document.getElementById("os-title6").classList.add("active")
 
         numOfProcesses = generaterandomNumber(1, 7);
         //console.log(numOfProcesses)
@@ -62,16 +71,36 @@ window.addEventListener("load", (e)=>{
 
         // console.log(countSpace(batchArray[0]))
 
-        for(i=0; i< batchArray[0].length; i++){
-            if (batchArray[0][i] == 0){
-                batchArray[0][i] = job;
-                batchJobs[i].innerHTML = `<img src='images/process.png' class='processImg' id="${job[0].ID}">`
-                break;               
-            }
-        }      
+        if(countSpace(batchArray[0]) == 0){
+
+            backlog.push(job)          
+            console.log("Job added to backlog: " + job[0]) // System Call
+
+        }else{
+            for(i=0; i< batchArray[0].length; i++){
+                if (batchArray[0][i] == 0){
+
+                    console.log("Job added to batch Queue: " + job[0])
+
+                    batchArray[0][i] = job;
+                    batchJobs[i].innerHTML = `<img src='images/process.png' class='processImg' id="${job[0].ID}">`
+                    break;               
+                }
+            } 
+        }
+            
 
         //console.log(batchArray)
         
+    });
+
+
+    consoleMin.addEventListener("mouseover", (e)=>{
+        consoleHover = true;
+    });
+    
+    consoleMin.addEventListener("mouseleave", (e)=>{
+        consoleHover = false;
     });
 
 });

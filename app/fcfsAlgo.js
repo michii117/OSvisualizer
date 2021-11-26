@@ -1,11 +1,14 @@
 function fcfs(from, into){
     
+    console.log("FCFS algorithm called...") // System Call
+
     var first = 1.7976931348623157E+10308;
     var index = 0;
 
+    // Finds earliest created process
     for(var i=0; i < from[0].length; i++){
         if(from[0][i] == 0){
-            continue;
+            continue; // Skip if value is 0.
         }else{
             if(from[0][i].o < first){
                 first = from[0][i].o;
@@ -17,27 +20,10 @@ function fcfs(from, into){
     
     // Remove selected process from current queue
     var x = from[0][index];
-    // console.log("problem: " + x)
     from[0][index] = 0;
 
-    
-    
     // Moves process into the next queue
-    if(into[1] == "processor"){        
-        animateMove(from[1], i = 0, into, index);
-        processorAction(x, "non");                
-    }else{
-        for(var i = 0; i < into[0].length; i++){
-            if(into[0][i] == 0){
-                into[0][i] = x;
-                // console.log("problem: " + from[1] + " ans: " + from[0])
-                // console.log("problem: " + into[1] + " ans: " + into[0])
-                animateMove(from[1], i, into, index);
-                break;
-            }
-            
-        }
-    }
+    mover(from, into, i, index, x, "non")
     
     // Unlocks short term dispatcher
     lock = false;

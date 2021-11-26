@@ -14,159 +14,117 @@ var werwed = 0;
 
 
 
-var dispatcherRunning = setInterval(()=> {
+var dispatcherRunning = setInterval(function running () {
 
+    algotype = document.getElementById("algo").value;
 
-        for(var i = 0; i < readyArray[0].length; i++){
+    // Update Ready Queue Table
 
-            if(readyArray[0][i] != 0){
-                readyArray[0][i].w = readyArray[0][i].w + 1
-                routput = `<tr><td>${i}</td><td>${readyArray[0][i].ID}</td><td>${readyArray[0][i].priority}</td><td>${readyArray[0][i].s}</td><td>${readyArray[0][i].e}</td><td>${readyArray[0][i].w}</td><tr>`
-                readyData[i].innerHTML = routput;
-            }else{
-                routput = `<tr><td>${i}</td><td> </td><td> </td><td> </td><td> </td><td> </td><tr>`
-                readyData[i].innerHTML = routput;
-            }
+    for(var i = 0; i < readyArray[0].length; i++){
+
+        if(readyArray[0][i] != 0){
+            readyArray[0][i].w = readyArray[0][i].w + 1
+            routput = `<tr><td>${i}</td><td>${readyArray[0][i].ID}</td><td>${readyArray[0][i].priority}</td><td>${readyArray[0][i].s}</td><td>${readyArray[0][i].e}</td><td>${readyArray[0][i].w}</td><tr>`
+            readyData[i].innerHTML = routput;
+        }else{
+            routput = `<tr><td>${i}</td><td> </td><td> </td><td> </td><td> </td><td> </td><tr>`
+            readyData[i].innerHTML = routput;
         }
+    }
 
-        for(var i = 0; i < batchArray[0].length; i++){
-            if(batchArray[0][i] != 0){
-                batchArray[0][i][3] = batchArray[0][i][3] + 1
-                joutput = `<tr><td>${i}</td><td>${batchArray[0][i][0]}</td><td>${batchArray[0][i][2].length}</td><td>${batchArray[0][i][1]}</td><td>${batchArray[0][i][3]}</td><tr>`
-                batchData[i].innerHTML = joutput;
-            }else{
-                joutput = `<tr><td>${i}</td><td> </td><td> </td><td> </td><td> </td><tr>`
-                batchData[i].innerHTML = joutput;
-            }
+
+    // Update Batch Job Table
+
+    for(var i = 0; i < batchArray[0].length; i++){
+        if(batchArray[0][i] != 0){
+            batchArray[0][i][3] = batchArray[0][i][3] + 1;
+            joutput = `<tr><td>${i}</td><td>${batchArray[0][i][0]}</td><td>${batchArray[0][i][2].length}</td><td>${batchArray[0][i][1]}</td><td>${batchArray[0][i][3]}</td><tr>`;
+            batchData[i].innerHTML = joutput;
+        }else{
+            joutput = `<tr><td>${i}</td><td> </td><td> </td><td> </td><td> </td><tr>`;
+            batchData[i].innerHTML = joutput;
         }
+    }
 
-        // console.log(readyArray[0])
 
-        algotype = document.getElementById("algo").value;
-    
+    // Short-term dispatcher selection code 
+
+    if(!isEmpty(readyArray[0]) && processor[0].length == 0 && lock==false){
+        block = true;
+        lock = true;
+        midlock = true;
         
-        // console.log(!isEmpty(readyArray[0]) && processor[0].length == 0 && lock==false);
-        
-
-        // console.log(!isEmpty(readyArray[0]) && processor[0].length == 0 && lock==false);
-
-        if(!isEmpty(readyArray[0]) && processor[0].length == 0 && lock==false){
-            block = true;
-            lock = true;
-            midlock = true;
-            // console.log(readyArray);
-            selectAlgo(algotype, readyArray, processor);
-
-        }
-
-        
-
-        if(countSpace(suspendedArray[0]) != 12 && countSpace(readyArray[0]) > 2 && midlock == false){
-            block = true;
-            lock = true;
-            midlock = true;
-
-            console.log("Medium Term Scheduling...")
-            selectAlgo(algotype, suspendedArray, readyArray);
-        }
-
-
-        
-        // console.log(isEmpty(batchArray[0]) == false && isFull(readyArray[0]) == false && block==false && countSpace(readyArray[0]) >= 7);
-        // console.log(isEmpty(batchArray[0]) == false)
-        // console.log(isFull(readyArray[0]) == false)
-        // console.log(block==false)
-        // console.log(countSpace(readyArray[0]) >= 7)
-        // console.log(countSpace(readyArray[0]))
-
-        //clearInterval(dispatcherRunning)
-        if(isEmpty(batchArray[0]) == false && isFull(readyArray[0]) == false && block==false && countSpace(readyArray[0]) > 6 && countSpace(suspendedArray[0]) == 12){
-            block = true;
-            lock = true;     
-            midlock = true;  
-            // console.log(batchArray)    
-            //setInterval(()=> {console.log(batchArray)}, 1000);
-            werwed = batchArray[0][0][3]
-            selectAlgo("priority", batchArray, readyArray);
-        }
-
-        // console.log(batchArray)
-
-        // for(var j = 0; j < x.length; j++){
-        //     for(var i = 0; i < into[0].length; i++){
-        //         if(into[0][i] == 0){
-        //             into[0][i] = x[j];
-        //             animateMove(from[1], i, into, index);
-        //             break;
-        //             // console.log("problem: " + from[1] + " ans: " + from[0])
-        //             // console.log("problem: " + into[1] + " ans: " + into[0])
-                    
-        //         }
-                
-        //     }
-        // }
-
-        suspendedAction();
-        blockedAction();
-    
-}, 1000);
-
-
-
-var interrupt = 4;
-
-async function blockedAction(){
-
-    // Check if blockArray is empty
-    if(countSpace(blockArray[0]) != 12){
-
-        // console.log("Block Array Populated")
-
-        for(var i = 0; i < blockArray[0].length; i++){
-
-            if(blockArray[0][i] != 0){
-                // console.log("Processing interrupt...")
-                
-                
-
-                boutput = `<tr> <td>${i}</td> <td>${blockArray[0][i].ID}</td> <td>${blockArray[0][i].content[0]}</td> <td>${blockArray[0][i].content[1]}</td> <td>${blockArray[0][i].w}</td><tr>`
-                blockData[i].innerHTML = boutput
-
-                blockArray[0][i].w = blockArray[0][i].w + 1;
-
-                if(blockArray[0][i].content[1] == interrupt){
-
-                    boutput = `<tr><td>${i}</td><td> </td><td> </td><td> </td><td> </td><tr>`
-                    blockData[i].innerHTML = boutput
-
-                    blockArray[0][i].content[0] = 0;
-    
-                    var popped = blockArray[0][i];
-                    blockArray[0][i] = 0;
-
-                    index = i;
-    
-                    for(var j = 0; j < suspendedArray[0].length; j++){
-                        if(suspendedArray[0][j] == 0){
-                            // console.log("Store in suspended queue...")
-                            suspendedArray[0][j] = popped;
-                            await animateMove(blockArray[1], j, suspendedArray, index);
-                            break;
-                        }
-                    } 
-    
-                }else{
-                    blockArray[0][i].content[1] = blockArray[0][i].content[1] + 1;
-                    // console.log(blockArray[0][i])
-                }
-                
-            }
-            
-        }
+        console.log("Short-term dispatcher activated..."); // System Call
+        console.log("Short-Term Scheduling..."); // System Call
+        selectAlgo(algotype, readyArray, processor);
 
     }
-     
-}
+
+        
+    // Medium-term dispatcher selection code 
+
+    if(countSpace(suspendedArray[0]) != 12 && countSpace(readyArray[0]) > 2 && midlock == false){
+        block = true;
+        lock = true;
+        midlock = true;
+
+        console.log("Medium-term dispatcher activated..."); // System Call
+        console.log("Medium-Term Scheduling..."); // System Call
+        selectAlgo(algotype, suspendedArray, readyArray);
+    }
+
+
+    // Long-term dispatcher selection code    
+        
+    if(isEmpty(batchArray[0]) == false && isFull(readyArray[0]) == false && block==false && countSpace(readyArray[0]) > 6 && countSpace(suspendedArray[0]) == 12){
+        block = true;
+        lock = true;     
+        midlock = true;  
+        
+        console.log("Long-term dispatcher activated..."); // System Call
+        console.log("Long-Term Scheduling..."); // System Call
+        werwed = batchArray[0][0][3]
+        selectAlgo("priority", batchArray, readyArray);
+    }
+
+
+    suspendedAction();
+    blockedAction();
+
+
+    if(countSpace(blockArray[0]) == 12){
+        // console.log("Block Array Populated")
+        document.getElementById("os-title3").classList.remove("active")
+    }
+
+    // Check For processes
+    if(countSpace(readyArray[0]) == 12 && countSpace(suspendedArray[0]) && countSpace(batchArray[0]) && countSpace(blockArray[0]) && processor[0].length ==0){
+        console.log("System Waiting on job...")
+
+        // Turn of other OS parts
+        document.getElementById("os-title3").classList.remove("active")
+        document.getElementById("os-title1").classList.remove("active")
+        document.getElementById("os-title6").classList.remove("active")
+    }
+
+    if(countSpace(batchArray[0]) > 0 && backlog.length > 0){
+        var pushJob = backlog.splice(0, 1)[0]
+        console.log("Job removed from backlog: " + pushJob[0]) // System Call
+
+        for(i=0; i< batchArray[0].length; i++){
+            if (batchArray[0][i] == 0){
+
+                console.log("Job added to batch Queue: " + pushJob[0])
+
+                batchArray[0][i] = pushJob;
+                batchJobs[i].innerHTML = `<img src='images/process.png' class='processImg' id="${pushJob[0].ID}">`
+                break;               
+            }
+        }
+    }
+
+    
+}, 1000);
 
 
 
