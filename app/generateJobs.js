@@ -24,7 +24,7 @@ var genProcess;
 window.addEventListener("load", (e)=>{
 
     genProcess= document.getElementById("generateJob");
-
+    genJob = document.getElementById("generateProcess");
     processorData = document.getElementById("proccessorBody");
     readyData = document.getElementsByClassName("rbody");
     batchData = document.getElementsByClassName("jbody");
