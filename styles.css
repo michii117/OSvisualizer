@@ -14,9 +14,10 @@ body {
     filter: drop-shadow(0px 0px 0px #00000033);
     position: absolute;
     right: 5%;
-    top: 110px;
+    top: 76px;
     padding: 30px;
     display: none;
+    z-index: 99;
 }
 
 
@@ -147,7 +148,7 @@ img#logo {
 select#algo {
     position: absolute;
     top: 1%;
-    right: 22%;
+    left: 9%;
     width: 90px;
     height: 42px;
 }
@@ -165,7 +166,6 @@ select#algo {
 button, .gproc {
     padding: 15px;
     border: 0px;
-    filter: drop-shadow(0px 2px 3px #00000033);
     color: white;
     font-size: 18px;
     font-family: -apple-system,BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "NotoSans", sans-serif;
@@ -174,6 +174,10 @@ button, .gproc {
     position: absolute;
     right: 5%;
     top: 17%;
+}
+
+button#generateJob:hover, button#createJob:hover, img#Startsim:hover{    
+    filter: drop-shadow(0px 2px 3px #00000033);
 }
 
 header {
@@ -187,6 +191,7 @@ header {
 
 
 main{
+    z-index: -1;
     grid-area: main;
     height: 653px;
     margin-left: 30px;
@@ -200,7 +205,7 @@ main{
     z-index: -1;
 }
 
-hr.bhline, hr.rhline, hr.rshline, hr.bqhline,hr.chline{
+hr.bhline, hr.rhline, hr.rshline, hr.bqhline,hr.chline, hr.shline{
     height: 5px;
     background-color: #03a9f4;
     border: none;
@@ -210,7 +215,7 @@ hr.bhline, hr.rhline, hr.rshline, hr.bqhline,hr.chline{
     left: 75px;
 }
 
-hr.bnode, hr.rnode, hr.rsnode, hr.bqnode, hr.cnode  {
+hr.bnode, hr.rnode, hr.rsnode, hr.bqnode, hr.cnode, hr.snode  {
     width: 10px !important;
     left: 70px;
     height: 10px;
@@ -221,7 +226,7 @@ hr.bnode, hr.rnode, hr.rsnode, hr.bqnode, hr.cnode  {
     border: none;
 }
 
-hr.bvline, hr.rvline, hr.rsvline, hr.bqvline,hr.cvline{
+hr.bvline, hr.rvline, hr.rsvline, hr.bqvline,hr.cvline, hr.svline{
     width: 5px;
     left: 100px;
     height: 472px;
@@ -237,6 +242,12 @@ hr.rvline {
     top: 151px;
     height: 15px !important;
     left: 200px;
+}
+
+hr.svline {
+    top: 526px;
+    left: 216px;
+    height: 29px;
 }
 
 /* A.J */
@@ -255,7 +266,7 @@ hr.cvline1 {
 hr.cvline2 {
     top: 185px;
     left: 965px;
-    height: 314px;
+    height: 345px;
 }
 
 hr.cvline3 {
@@ -1047,6 +1058,206 @@ hr.cnode.cnode0 {
     left: 846px;
 }
 
+p.index.sID0 {
+    top: 66px;
+    left: 12px;
+    z-index: 2;
+}
+
+p.index.sID1 {
+    top: 66px;
+    left: 59px;
+    z-index: 2;
+}
+
+p.index.sID2 {
+    top: 66px;
+    left: 105px;
+    z-index: 2;
+}
+
+p.index.sID3 {
+    top: 66px;
+    left: 148px;
+    z-index: 2;
+}
+
+p.index.sID4 {
+    top: 66px;
+    left: 193px;
+    z-index: 2;
+}
+
+p.index.sID5 {
+    top: 66px;
+    left: 237px;
+    z-index: 2;
+}
+
+p.index.sID6 {
+    top: 66px;
+    left: 282px;
+    z-index: 2;
+}
+
+p.index.sID7 {
+    top: 66px;
+    left: 325px;
+    z-index: 2;
+}
+
+p.index.sID8 {
+    top: 66px;
+    left: 369px;
+    z-index: 2;
+}
+
+p.index.sID9 {
+    top: 66px;
+    left: 412px;
+    z-index: 2;
+}
+
+p.index.sID10 {
+    top: 66px;
+    left: 458px;
+    z-index: 2;
+}
+
+p.index.sID11 {
+    top: 66px;
+    left: 501px;
+    z-index: 2;
+}
+
+p.index.bqID0 {
+    top: 0px;
+    left: 12px;
+    z-index: 2;
+}
+
+p.index.bqID1 {
+    top: 0px;
+    left: 59px;
+    z-index: 2;
+}
+
+p.index.bqID2 {
+    top: 0px;
+    left: 105px;
+    z-index: 2;
+}
+
+p.index.bqID3 {
+    top: 0px;
+    left: 148px;
+    z-index: 2;
+}
+
+p.index.bqID4 {
+    top: 0px;
+    left: 193px;
+    z-index: 2;
+}
+
+p.index.bqID5 {
+    top: 0px;
+    left: 237px;
+    z-index: 2;
+}
+
+p.index.bqID6 {
+    top: 0px;
+    left: 282px;
+    z-index: 2;
+}
+
+p.index.bqID7 {
+    top: 0px;
+    left: 325px;
+    z-index: 2;
+}
+
+p.index.bqID8 {
+    top: 0px;
+    left: 369px;
+    z-index: 2;
+}
+
+p.index.bqID9 {
+    top: 0px;
+    left: 412px;
+    z-index: 2;
+}
+
+p.index.bqID10 {
+    top: 0px;
+    left: 458px;
+    z-index: 2;
+}
+
+p.index.bqID11 {
+    top: 0px;
+    left: 501px;
+    z-index: 2;
+}
+
+hr.shline {
+    top: 526px;
+    left: 217px;
+    width: 753px;
+}
+
+hr.svline.svline1 {
+    left: 339px;
+}
+
+hr.svline.svline2 {
+    left: 464px;
+}
+
+hr.svline.svline3 {
+    left: 590px;
+}
+
+hr.svline.svline4 {
+    left: 714px;
+}
+
+hr.svline.svline5 {
+    left: 856px;
+}
+
+hr.snode.snode0, hr.snode.snode0, hr.snode.snode1,hr.snode.snode2,hr.snode.snode3,hr.snode.snode4,hr.snode.snode5{
+    top: 552px;
+    transform: rotateZ(270deg);
+    left: 330px;
+}
+
+hr.snode.snode0 {
+    left: 214px;
+}
+
+hr.snode.snode1 {
+    left: 337px;
+}
+
+hr.snode.snode2 {
+    left: 462px;
+}
+
+hr.snode.snode3 {
+    left: 588px;
+}
+
+hr.snode.snode4 {
+    left: 711px;
+}
+
+hr.snode.snode5 {
+    left: 854px;
+}
+
 /* A.J. */
 
 .osPROP{
@@ -1072,4 +1283,35 @@ div#operatingSystem {
 
 .active{
     color: #03a9f4;
+}
+
+
+/*new css*/
+button#generateJob {
+    right: 16%;
+    background-color: #e91e63;
+    filter: none;
+    color: #ffffff;
+    border-radius: 2px;
+}
+img#Startsim {
+    left: 3%;
+    width: 40px;
+    position: absolute;
+    top: 25px;
+    cursor: pointer;
+}
+
+button#createJob {
+    right: 3%;
+    filter: none;
+    border-radius: 2px;
+}
+
+#finish {
+    top: 360px;
+    left:30px;
+    background-color: #04AA6D;
+    width: 170px;
+    height: 60px;
 }

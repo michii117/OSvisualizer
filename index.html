@@ -14,11 +14,13 @@
         <header>
                 <div id="header-container">
                     <button id="generateJob">Generate Job</button>
-                    <img src="images/logo.gif" alt="" id="logo">
-                    <select name="algo" id="algo">
+                    <button id="createJob">Create Job</button>
+                    <img src="images/play-button.png" alt="" id="Startsim">
+                    <!-- <img src="images/logo.gif" alt="" id="logo"> -->
+                    <select name="algo" id="algo">                      
+                      <option value="fcfs" selected>FCFS</option>
                         <option value="srt" >SRT</option>
                         <option value="spn">SPN</option>
-                        <option value="fcfs" selected>FCFS</option>
                         <option value="hrrn">HRRN</option>
                     </select>
                     
@@ -31,26 +33,26 @@
                     </ul> -->
                 </div>
 
-                <!-- <div class="create-process-panel-container">
+                <div class="create-process-panel-container">
 
-                    <div class="nav">
-                        <form action="" class="form" id="createProcessForm">
-                            <h6>Process Information</h6>
-                            <input type="number" placeholder="Identifier" id="id" required>
-                            <input type="number" placeholder="Service Time" id="s" class= "procInfoField" required>
-                            <input type="number" placeholder="Priority" id="priority" class= "procInfoField" min="0" max="5" required>
+                  <div class="nav">
+                      <form action="" class="form" id="createProcessForm">
+                          <h6>Process Information</h6>
+                          <input type="number" placeholder="Identifier" id="id" required>
+                          <input type="number" placeholder="Service Time" id="s" class= "procInfoField" min="5" max="30"required>
+                          <input type="number" placeholder="Priority" id="priority" class= "procInfoField" min="0" max="5" required>
 
-                            <h6>Process Content</h6>
-                            <select name="" id="typeProcess"  required>
-                                <option value="0" selected>No I/O Interrupt</option>
-                                <option value="1">I/O Interrupt</option>
-                            </select>
-                            
-                            <input type="submit" id="generateProcess" class="gproc" value="Generate Process">
-                        </form>
-                    </div>
-                    
-                </div> -->
+                          <h6>Process Content</h6>
+                          <select name="" id="typeProcess"  required>
+                              <option value="0" selected>No I/O Interrupt</option>
+                              <option value="1">I/O Interrupt</option>
+                          </select>
+                          <input type="submit" id="finish" class="gproc" value="Finish creation">
+                          <input type="submit" id="generateProcess" class="gproc" value="Generate Process">
+                      </form>
+                  </div>
+                  
+              </div>
             </header>
             
             <main>
@@ -148,81 +150,81 @@
                 <img src="images/processingAnimationg.gif" alt="dispather bot" class="dispatcher-active midd">
                 <div id="readySusQueue" class="queue">
                     
-                    <!-- <p class="index ID0">0</p> -->
-                    <div class="suspendedContainer"></div>
-                    
-                    <!-- <p class="index ID1">1</p> -->
-                    <div class="suspendedContainer"></div>
-                    
-                    <!-- <p class="index ID2">2</p> -->
-                    <div class="suspendedContainer"></div>
-                    
-                    <!-- <p class="index ID3">3</p> -->
-                    <div class="suspendedContainer"></div>
-                    
-                    <!-- <p class="index ID4">4</p> -->
-                    <div class="suspendedContainer"></div>
-                    
-                    <!-- <p class="index ID5">5</p> -->
-                    <div class="suspendedContainer"></div>
-                    
-                    <!-- <p class="index ID6">6</p> -->
-                    <div class="suspendedContainer"></div>
-                    
-                    <!-- <p class="index ID7">7</p> -->
-                    <div class="suspendedContainer"></div>
-                    
-                    <!-- <p class="index ID8">8</p> -->
-                    <div class="suspendedContainer"></div>
-                    
-                    <!-- <p class="index ID9">9</p> -->
-                    <div class="suspendedContainer"></div>
-                    
-                    <!-- <p class="index ID10">10</p> -->
-                    <div class="suspendedContainer"></div>
-                    
-                    <!-- <p class="index ID11">11</p> -->
-                    <div class="suspendedContainer"></div>
-                </div>
+                  <p class="index sID0">0</p>
+                  <div class="suspendedContainer"></div>
+                  
+                  <p class="index sID1">1</p>
+                  <div class="suspendedContainer"></div>
+                  
+                  <p class="index sID2">2</p>
+                  <div class="suspendedContainer"></div>
+                  
+                  <p class="index sID3">3</p>
+                  <div class="suspendedContainer"></div>
+                  
+                  <p class="index sID4">4</p>
+                  <div class="suspendedContainer"></div>
+                  
+                  <p class="index sID5">5</p>
+                  <div class="suspendedContainer"></div>
+                  
+                  <p class="index sID6">6</p>
+                  <div class="suspendedContainer"></div>
+                  
+                  <p class="index sID7">7</p>
+                  <div class="suspendedContainer"></div>
+                  
+                  <p class="index sID8">8</p>
+                  <div class="suspendedContainer"></div>
+                  
+                  <p class="index sID9">9</p>
+                  <div class="suspendedContainer"></div>
+                  
+                  <p class="index sID10">10</p>
+                  <div class="suspendedContainer"></div>
+                  
+                  <p class="index sID11">11</p>
+                  <div class="suspendedContainer"></div>
+              </div>
 
 
                 <div id="blockQueue" class="queue">
-                    <!-- <p class="index ID0">0</p> -->
-                    <div class="blockedContainer"></div>
-                    
-                    <!-- <p class="index ID1">1</p> -->
-                    <div class="blockedContainer"></div>
-                    
-                    <!-- <p class="index ID2">2</p> -->
-                    <div class="blockedContainer"></div>
-                    
-                    <!-- <p class="index ID3">3</p> -->
-                    <div class="blockedContainer"></div>
-                    
-                    <!-- <p class="index ID4">4</p> -->
-                    <div class="blockedContainer"></div>
-                    
-                    <!-- <p class="index ID5">5</p> -->
-                    <div class="blockedContainer"></div>
-                    
-                    <!-- <p class="index ID6">6</p> -->
-                    <div class="blockedContainer"></div>
-                    
-                    <!-- <p class="index ID7">7</p> -->
-                    <div class="blockedContainer"></div>
-                    
-                    <!-- <p class="index ID8">8</p> -->
-                    <div class="blockedContainer"></div>
-                    
-                    <!-- <p class="index ID9">9</p> -->
-                    <div class="blockedContainer"></div>
-                    
-                    <!-- <p class="index ID10">10</p> -->
-                    <div class="blockedContainer"></div>
-                    
-                    <!-- <p class="index ID11">11</p> -->
-                    <div class="blockedContainer"></div>
-                </div>
+                  <p class="index bqID0">0</p>
+                  <div class="blockedContainer"></div>
+                  
+                  <p class="index bqID1">1</p>
+                  <div class="blockedContainer"></div>
+                  
+                  <p class="index bqID2">2</p>
+                  <div class="blockedContainer"></div>
+                  
+                  <p class="index bqID3">3</p>
+                  <div class="blockedContainer"></div>
+                  
+                  <p class="index bqID4">4</p>
+                  <div class="blockedContainer"></div>
+                  
+                  <p class="index bqID5">5</p>
+                  <div class="blockedContainer"></div>
+                  
+                  <p class="index bqID6">6</p>
+                  <div class="blockedContainer"></div>
+                  
+                  <p class="index bqID7">7</p>
+                  <div class="blockedContainer"></div>
+                  
+                  <p class="index bqID8">8</p>
+                  <div class="blockedContainer"></div>
+                  
+                  <p class="index bqID9">9</p>
+                  <div class="blockedContainer"></div>
+                  
+                  <p class="index bqID10">10</p>
+                  <div class="blockedContainer"></div>
+                  
+                  <p class="index bqID11">11</p>
+                  <div class="blockedContainer"></div>
+              </div>
 
                 <img src="images/dispatcher.gif" alt="dispather bot" class="dispatcher">
                 <img src="images/processingAnimationg.gif" alt="dispather bot" class="dispatcher-active">
@@ -348,7 +350,19 @@
                     <hr class="bqvline bqvline11">
                     <hr class="bqnode bqnode11">
 
-
+                    <hr class="shline">
+                    <hr class="svline svline0">
+                    <hr class="snode snode0">
+                    <hr class="svline svline1">
+                    <hr class="snode snode1">
+                    <hr class="svline svline2">
+                    <hr class="snode snode2">
+                    <hr class="svline svline3">
+                    <hr class="snode snode3">
+                    <hr class="svline svline4">
+                    <hr class="snode snode4">
+                    <hr class="svline svline5">
+                    <hr class="snode snode5">
 
 
                 </div>
@@ -361,9 +375,9 @@
               <div id="steady"></div>
 
                 <select name="algo" id="menuoverviewcontrol">
-                  <option value="Long-term" selected>Long-term</option>
-                  <option value="Medium-term">Medium-term</option>
+                  <option value="Long-term" selected>Long-term</option>                  
                   <option value="Short-term">Short-term</option>
+                  <option value="Medium-term">Medium-term</option>
                 </select>
                 
                 <h6>System Calls</h6>
@@ -542,6 +556,7 @@
 <script src="app/selectionAlgo.js"></script>
 <script src="app/menuNav.js"></script>
 <script src="app/consoleSimulation.js"></script>
+<script src="app/createJob.js"></script>
 </body>
 </html>
 

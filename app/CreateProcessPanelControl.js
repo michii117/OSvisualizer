@@ -1,21 +1,36 @@
-// var block= true;
-// var createProcessPanel;
-// window.addEventListener("load", (e)=>{
+var vlock= true;
+var clos = true;
+var createProcessPanel;
+//had to change this, create job probably shouldnt be being used to both start the simulation AND make jobs, gave the start functionality to Start Sim button
+//check bottom of css for css for start sim
+window.addEventListener("load", (e)=>{
 
-//     var createProcess= document.getElementById("createProcess");
-//     createProcessPanel= document.getElementsByClassName("create-process-panel-container")[0];
-//     createProcess.addEventListener("click", (e)=>{
-//         displayer();       
-//     });      
+    var createProcess= document.getElementById("createJob");
+    var starter = document.getElementById("Startsim");
+    createProcessPanel= document.getElementsByClassName("create-process-panel-container")[0];
+    createProcess.addEventListener("click", (e)=>{
+        displayer();      
+    });  
+    starter.addEventListener("click", (e)=>{
+        begin();       
+    });      
 
-// });
+});
 
-// function displayer(){
-//     if(block== true){
-//         createProcessPanel.style.display = "inline-block";
-//         block= false;
-//     }else{
-//         createProcessPanel.style.display = "none";
-//         block= true;
-//     }
-// }
+function displayer(){
+    if(clos== true){
+        createProcessPanel.style.display = "inline-block";
+        clos= false;
+    }else{
+        createProcessPanel.style.display = "none";
+        clos= true;
+    }
+}
+
+function begin(){
+    if(vlock== true){
+        vlock = false;
+    }else{
+        vlock= true;
+    }
+}

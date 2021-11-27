@@ -28,7 +28,7 @@ window.addEventListener("load", (e) =>{
         overviewValue = document.getElementById("menuoverviewcontrol").value
         
 
-        console.log(overviewValue)
+        console.log("Menu view switched to: " + overviewValue)
         if(overviewValue == "Short-term"){
             for(i=0;i<longlist.length;i++){
                 longlist[i].classList.add("hideinmenu")

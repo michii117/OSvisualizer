@@ -20,6 +20,10 @@ var blockData;
 var susData;
 
 var genProcess;
+let genJob;
+let finc;
+
+//added new button "finish creation"(finish) to add the job to the queue thingie when all processes have been added
 
 var consoleMin;
 
@@ -29,7 +33,8 @@ window.addEventListener("load", (e)=>{
 
     
     genProcess= document.getElementById("generateJob");
-
+    genJob = document.getElementById("generateProcess");
+    finc = document.getElementById("finish");
     processorData = document.getElementById("proccessorBody");
     readyData = document.getElementsByClassName("rbody");
     batchData = document.getElementsByClassName("jbody");
@@ -42,9 +47,6 @@ window.addEventListener("load", (e)=>{
     suspendedQueue = document.getElementsByClassName("suspendedContainer");
 
     
-    document.getElementById("os-title5").classList.add("active")
-    document.getElementById("os-title4").classList.add("active")
-
     consoleMin = document.getElementById("html_console")
 
     genProcess.addEventListener("click", async (e)=>{
@@ -103,6 +105,7 @@ window.addEventListener("load", (e)=>{
         consoleHover = false;
     });
 
+    
 });
 
 function generaterandomNumber(min, max) { 
