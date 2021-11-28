@@ -1,4 +1,4 @@
-function selectAlgo(type, from, into){
+function selectAlgo(type, from, into, wait){
     switch(type){
         case "srt":
             srt(from, into);
@@ -13,7 +13,7 @@ function selectAlgo(type, from, into){
             hrrn(from, into);
             break;
         case "priority":
-            priority(from, into);
+            priority(from, into, wait);
     }
 }
 

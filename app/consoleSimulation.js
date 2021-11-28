@@ -9,6 +9,5 @@ console.log = function(message){
     if(consoleHover == false){
         consoleMin.scrollBy(0,100);
     }
-    
 } 
 

@@ -4,7 +4,3 @@
 
 # This visualizer simulates the process scheduling component of the OS.
 
-# Need to add:
-#Time slicing control 
-#Backlog View
-#Fix Suspended and Block Table

@@ -15,6 +15,7 @@ window.addEventListener("load", (e)=>{
         begin();       
     });      
 
+  
 });
 
 function displayer(){
@@ -30,7 +31,9 @@ function displayer(){
 function begin(){
     if(vlock== true){
         vlock = false;
+        console.log("Visualizer Played...")
     }else{
         vlock= true;
+        console.log("Visualizer Paused...")
     }
 }

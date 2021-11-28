@@ -23,7 +23,7 @@ function hrrn(from, into){
                 
     }
     
-    console.log("Selected Process: " + from[0][index].ID + "HRRN: " + shortest) // HRRN Proof
+    console.log("Selected Process: " + from[0][index].ID + " HRRN: " + shortest) // HRRN Proof
 
     // Remove selected process from current queue
     var x = from[0][index]

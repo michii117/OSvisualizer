@@ -191,7 +191,6 @@ header {
 
 
 main{
-    z-index: -1;
     grid-area: main;
     height: 653px;
     margin-left: 30px;
@@ -601,9 +600,16 @@ div#readyQueue {
     margin-left: 30px;
 }
 
-.dispatcher_processor{
+.dispatcher_processor, #processorlabel{
     top: 175px;
     left: 900px;
+}
+
+#processorlabel {
+    position: absolute;
+    top: 276px;
+    left: 950px;
+    background-color: #c4e1e1;
 }
 
 .dispatcher-active{
@@ -1314,4 +1320,25 @@ button#createJob {
     background-color: #04AA6D;
     width: 170px;
     height: 60px;
+}
+
+label#timeslicelabel, #interruptTimelabel {
+    position: absolute;
+    left: 220px;
+    top: 33px;
+    color: #9ea4ab;
+}
+
+input#timeslicevalue, #interruptTimevalue {
+    width: 30px;
+    left: 310px;
+    position: absolute;
+}
+
+label#interruptTimelabel {
+    left: 380px;
+}
+
+input#interruptTimevalue {
+    left: 500px;
 }

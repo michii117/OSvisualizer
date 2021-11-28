@@ -23,6 +23,12 @@
                         <option value="spn">SPN</option>
                         <option value="hrrn">HRRN</option>
                     </select>
+
+                    <label for="" id = "timeslicelabel">Time Slice: </label>
+                    <input type="number" min="2" value="4" id = "timeslicevalue">
+
+                    <label for="" id = "interruptTimelabel">Interrupt Time: </label>
+                    <input type="number" min="2" value="4" id = "interruptTimevalue">
                     
                     <!-- <div id="controller">Pause</div> -->
 
@@ -229,6 +235,7 @@
                 <img src="images/dispatcher.gif" alt="dispather bot" class="dispatcher">
                 <img src="images/processingAnimationg.gif" alt="dispather bot" class="dispatcher-active">
                 <img src="images/processors.png" alt="" class="dispatcher_processor">
+                <h6 id="processorlabel">Processor</h6>
 
 
 
@@ -510,22 +517,21 @@
                           <th>s</th>
                           <th>e</th>
                           <th>w</th>
-                          <th>Int</th>
                         </tr>
                       </thead>
                       <tbody id="susBody">
-                        <tr class="sbody" id="readydata1"><td>0</td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr class="sbody" id="readydata1"><td>1</td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr class="sbody" id="readydata2"><td>2</td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr class="sbody" id="readydata3"><td>3</td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr class="sbody" id="readydata4"><td>4</td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr class="sbody" id="readydata5"><td>5</td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr class="sbody" id="readydata6"><td>6</td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr class="sbody" id="readydata7"><td>7</td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr class="sbody" id="readydata8"><td>8</td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr class="sbody" id="readydata9"><td>9</td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr class="sbody" id="readydata10"><td>10</td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr class="sbody" id="readydata11"><td>11</td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody"><td>0</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody"><td>1</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody"><td>2</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody"><td>3</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody"><td>4</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody"><td>5</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody"><td>6</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody"><td>7</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody"><td>8</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody"><td>9</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody"><td>10</td><td></td><td></td><td></td><td></td></tr>
+                        <tr class="sbody"><td>11</td><td></td><td></td><td></td><td></td></tr>
                     </tbody>
                     </table>
                 </div>

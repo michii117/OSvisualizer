@@ -2,7 +2,7 @@ async function animateMove(from, i, into, index){
     switch(from){
         case "ready":
             
-            console.log("Move " + into[0][i].ID + " from batch to ready queue...") // System Call
+            console.log("Move " + into[0][i].ID + " from ready to processor...") // System Call
             console.log("Animate move...") // System Call
 
             readyQueue[index].innerHTML = "";

@@ -1,7 +1,8 @@
 async function processorAction(type){
     
     var swap = 1;
-
+    
+    document.getElementById("processorlabel").classList.add("active")
     updateProcessorTable()
 
     var subtract = setInterval( async () => {
@@ -18,7 +19,7 @@ async function processorAction(type){
             console.log("Time till interrupt: " + processor[0][0].content[1]) // System Call
         }
         
-        if(type == "pre" && processor[0][0].s > 0 && swap == 4){ // pre-emptive time slicing controller
+        if(type == "pre" && processor[0][0].s > 0 && swap == document.getElementById("timeslicevalue").value){ // pre-emptive time slicing controller
 
             console.log("Time slice limit reached...") // System Call
             var val = processor[0].pop()
@@ -30,14 +31,14 @@ async function processorAction(type){
                     break;
                 }                
             }
-
+            
+            document.getElementById("processorlabel").classList.remove("active")
             clearInterval(subtract);
 
         }else if(processor[0][0].content[1] == 0 && processor[0][0].content[0] == 1){ //Interupt handler
 
             console.log("Interrupt called on " + processor[0][0].ID + "...") // System Call
-            document.getElementById("os-title3").classList.add("active")
-
+            interrupt = document.getElementById("interruptTimevalue").value
             var val1 = processor[0].pop()
             clearProcessorTable()
 
@@ -46,6 +47,7 @@ async function processorAction(type){
                     
                     blockArray[0][i] = val1;
                     await animateMove(processor[1], i, blockArray, 0);
+                    document.getElementById("processorlabel").classList.remove("active")
                     clearInterval(subtract);
                     break;
                 }                
@@ -58,11 +60,11 @@ async function processorAction(type){
 
             processor[0].pop()
 
-            if(countSpace(readyArray[0]) == 12 && countSpace(suspendedArray[0]) && countSpace(batchArray[0]) && countSpace(blockArray[0])){ // No processes in system
+            if(countSpace(readyArray[0]) == 12 && countSpace(suspendedArray[0]) && countSpace(batchArray[0]) && countSpace(blockArray[0]) && processor[0].length == 0){ // No processes in system
                 
                 clearProcessorTable()
             }
-
+            document.getElementById("processorlabel").classList.remove("active")
             clearInterval(subtract);
         }
         swap++

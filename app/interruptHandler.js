@@ -1,4 +1,4 @@
-var interrupt = 4;
+var interrupt;
 
 async function blockedAction(){
 
@@ -12,7 +12,7 @@ async function blockedAction(){
                 
                 // Update blocked table
                 
-                boutput = `<tr> <td>${i}</td> <td>${blockArray[0][i].ID}</td> <td>${blockArray[0][i].content[0]}</td> <td>${blockArray[0][i].content[1]}</td> <td>${blockArray[0][i].w}</td><tr>`
+                boutput = `<tr> <td>${i}</td> <td>${blockArray[0][i].ID}</td> <td>${blockArray[0][i].content[0]}</td> <td>${interrupt - blockArray[0][i].content[1]}</td> <td>${blockArray[0][i].w}</td><tr>`
                 blockData[i].innerHTML = boutput
 
                 blockArray[0][i].w = blockArray[0][i].w + 1;
@@ -46,7 +46,7 @@ async function blockedAction(){
 
                     console.log(blockArray[0][i].ID + " interrupt processing...") // System Call
                     blockArray[0][i].content[1] = blockArray[0][i].content[1] + 1;
-                    
+                    console.log("Time till interrupt completed: " + (interrupt - blockArray[0][i].content[1])) // System Call
                 }
                 
             }

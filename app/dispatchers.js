@@ -9,12 +9,33 @@ var routput= "";
 var boutput= "";
 var joutput= "";
 var soutput= "";
-var werwed = 0;
+var lastworkingW;
 
 
 
+var running = setInterval(async () => {
 
-var running = setInterval(function running () {
+
+    // Update Batch Job Table
+
+    for(var i = 0; i < batchArray[0].length; i++){
+        if(batchArray[0][i] != 0){
+            batchArray[0][i][3] = batchArray[0][i][3] + 1;
+            lastworkingW = batchArray[0][i][3]
+            joutput = `<tr><td>${i}</td><td>${batchArray[0][i][0]}</td><td>${batchArray[0][i][2].length}</td><td>${batchArray[0][i][1]}</td><td>${batchArray[0][i][3]}</td><tr>`;
+            batchData[i].innerHTML = joutput;
+        }else{
+            joutput = `<tr><td>${i}</td><td> </td><td> </td><td> </td><td> </td><tr>`;
+            batchData[i].innerHTML = joutput;
+        }
+    }
+
+    if(backlog.length != 0){
+        for(var i = 0; i < backlog.length; i++){
+            backlog[i][3] = backlog[i][3] + 1;
+        }
+    }
+
 
     if(vlock == false){
 
@@ -36,21 +57,6 @@ var running = setInterval(function running () {
             }
         }
 
-
-        // Update Batch Job Table
-
-        for(var i = 0; i < batchArray[0].length; i++){
-            if(batchArray[0][i] != 0){
-                batchArray[0][i][3] = batchArray[0][i][3] + 1;
-                joutput = `<tr><td>${i}</td><td>${batchArray[0][i][0]}</td><td>${batchArray[0][i][2].length}</td><td>${batchArray[0][i][1]}</td><td>${batchArray[0][i][3]}</td><tr>`;
-                batchData[i].innerHTML = joutput;
-            }else{
-                joutput = `<tr><td>${i}</td><td> </td><td> </td><td> </td><td> </td><tr>`;
-                batchData[i].innerHTML = joutput;
-            }
-        }
-
-
         // Short-term dispatcher selection code 
 
         if(!isEmpty(readyArray[0]) && processor[0].length == 0 && lock==false){
@@ -60,11 +66,11 @@ var running = setInterval(function running () {
             
             console.log("Short-term dispatcher activated..."); // System Call
             console.log("Short-Term Scheduling..."); // System Call
-            selectAlgo(algotype, readyArray, processor);
+            selectAlgo(algotype, readyArray, processor, 0);
 
         }
 
-            
+        suspendedAction();   
         // Medium-term dispatcher selection code 
 
         if(countSpace(suspendedArray[0]) != 12 && countSpace(readyArray[0]) > 2 && midlock == false){
@@ -74,7 +80,7 @@ var running = setInterval(function running () {
 
             console.log("Medium-term dispatcher activated..."); // System Call
             console.log("Medium-Term Scheduling..."); // System Call
-            selectAlgo(algotype, suspendedArray, readyArray);
+            selectAlgo(algotype, suspendedArray, readyArray, 0);
         }
 
 
@@ -87,12 +93,13 @@ var running = setInterval(function running () {
             
             console.log("Long-term dispatcher activated..."); // System Call
             console.log("Long-Term Scheduling..."); // System Call
-            werwed = batchArray[0][0][3]
-            selectAlgo("priority", batchArray, readyArray);
+
+            selectAlgo("priority", batchArray, readyArray, lastworkingW);
         }
 
+        
 
-        suspendedAction();
+        
         blockedAction();
 
 
@@ -130,9 +137,7 @@ var running = setInterval(function running () {
         document.getElementById("os-title5").classList.remove("active")
         document.getElementById("os-title4").classList.remove("active")
     }
-
     
-
     
 }, 1000);
 
@@ -141,15 +146,17 @@ var running = setInterval(function running () {
 
 function suspendedAction(){
 
-    if(countSpace(suspendedArray[0]) != 12){
-        for(var i = 0; i < suspendedArray[0].length; i++){
-            if(suspendedArray[0][i] != 0){
-                suspendedArray[0][i].w = suspendedArray[0][i].w + 1;
-                console.log("Suspended table should be updating")
-                soutput = `<tr><td>${i}</td><td>${suspendedArray[0][0].ID}</td><td>${suspendedArray[0][0].s}</td><td>${suspendedArray[0][0].e}</td><td>${suspendedArray[0][0].w}</td><td>${suspendedArray[0][0].content[0]}</td><tr>`
-                susData[i].innerHTML = soutput
-            }
+    for(var i = 0; i < suspendedArray[0].length; i++){
+        if(suspendedArray[0][i] != 0){
+            suspendedArray[0][i].w = suspendedArray[0][i].w + 1;
+            console.log("Suspended table should be updating")
+            soutput = `<tr><td>${i}</td><td>${suspendedArray[0][0].ID}</td><td>${suspendedArray[0][0].s}</td><td>${suspendedArray[0][0].e}</td><td>${suspendedArray[0][0].w}</td><tr>`
+            susData[i].innerHTML = soutput
+        }else{
+            soutput = `<tr><td>${i}</td><td> </td><td> </td><td> </td><td> </td><td> </td><tr>`
+            susData[i].innerHTML = soutput
         }
     }
 
 }
+

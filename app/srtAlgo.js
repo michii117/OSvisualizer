@@ -24,7 +24,7 @@ function srt(from, into){
     from[0][index] = 0;
 
     // Moves process into the next queue
-    mover(from, into, i, index, x, "non")
+    mover(from, into, i, index, x, "pre")
     
     // Unlocks short term dispatcher
     lock = false;

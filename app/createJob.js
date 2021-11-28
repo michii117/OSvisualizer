@@ -55,6 +55,8 @@ window.addEventListener("load", (e) =>{
         runt = true;
         finc.disabled = true;
         cnumOfProcesses = 0;
+
+        displayer()
     } );
 });
 
@@ -64,7 +66,7 @@ function stateHandle() {
     }else if(inps[1].value > 31 || inps[1].value < 5){
         genJob.disabled = true;
         console.log("Input invalid!");
-        console.log("Service time must be between 5 and 30");
+        console.log("Service time must be between 6 and 30");
     }else if(inps[2].value < 1 || inps[2].value > 5 ){
         genJob.disabled = true;
         console.log("Input invalid!");
