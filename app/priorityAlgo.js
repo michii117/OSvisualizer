@@ -26,9 +26,9 @@ async function priority(from, into, wait){
     for(var j = 0; j < x.length; j++){
         for(var i = 0; i < into[0].length; i++){
             if(into[0][i] == 0){
-                x[j].o = 0;
-                x[j].w = x[j].w + wait;
-                into[0][i] = x[j];
+                x[j].o = 0; // Adds time spent in the ready queue to the process object
+                x[j].w = x[j].w + wait; // adds time spent waiting in the batch to the time spent waiting overall for each process
+                into[0][i] = x[j]; // adds process to the ready queue
                 animateMove(from[1], i, into, index);
                 break;                
             }
