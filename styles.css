@@ -512,7 +512,7 @@ footer{
 
 .container{
     display:grid;
-    grid-template-areas: 'header header header header header header header header header header header menu' 'main main main main main main main main main main main menu' 'footer footer footer footer footer footer footer footer footer footer footer footer';
+    grid-template-areas: 'header header header header header header header header header header header header header menu' 'main main main main main main main main main main main main main menu' 'footer footer footer footer footer footer footer footer footer footer footer footer footer footer';
 }
 
 
@@ -1342,4 +1342,9 @@ label#interruptTimelabel {
 
 input#interruptTimevalue {
     left: 500px;
+}
+
+.extend{
+    height: 180px !important;
+    transition: .5s;
 }

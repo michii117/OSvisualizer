@@ -5,7 +5,6 @@ var readyArray = [[0,0,0,0,0,0,0,0,0,0,0,0],"ready"];
 var backlog = [];
 
 var id = 0;
-var order = -1;
 var jobID = 0;
 
 var batchJobs;

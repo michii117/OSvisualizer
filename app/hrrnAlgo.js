@@ -4,7 +4,7 @@ function hrrn(from, into){
     
     console.log("HRRN algorithm called...") // System Call
 
-    var shortest = 1.7976931348623157E+10308;
+    var shortest = -1.7976931348623157E+10308;
     var index = 0;
 
     for(var i=0; i < from[0].length; i++){
@@ -15,7 +15,7 @@ function hrrn(from, into){
             var hrrn = (from[0][i].s + from[0][i].w) / from[0][i].s;
             console.log("ID " + from[0][i].ID + ": " + hrrn) // HRRN Proof
 
-            if(hrrn < shortest){
+            if(hrrn > shortest){
                 shortest = hrrn
                 index = i;
             }

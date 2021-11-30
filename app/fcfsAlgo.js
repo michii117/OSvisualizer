@@ -2,7 +2,7 @@ function fcfs(from, into){
     
     console.log("FCFS algorithm called...") // System Call
 
-    var first = 1.7976931348623157E+10308;
+    var first = -1.7976931348623157E+10308;
     var index = 0;
 
     // Finds earliest created process
@@ -10,7 +10,7 @@ function fcfs(from, into){
         if(from[0][i] == 0){
             continue; // Skip if value is 0.
         }else{
-            if(from[0][i].o < first){
+            if(from[0][i].o > first){
                 first = from[0][i].o;
                 index = i;
             }

@@ -23,13 +23,15 @@ window.addEventListener("load", (e) =>{
 
     }
 
-    overview.addEventListener("change", (e) =>{
+    overview.addEventListener("change", (e) =>{ // Gets value of menu change drop down on change and updates sidebar menu view
 
         overviewValue = document.getElementById("menuoverviewcontrol").value
         
 
         console.log("Menu view switched to: " + overviewValue)
-        if(overviewValue == "Short-term"){
+        if(overviewValue == "Short-term"){ // Show short term menu
+            document.getElementById("html_console").classList.add("extend"); // Extends console on screen
+
             for(i=0;i<longlist.length;i++){
                 longlist[i].classList.add("hideinmenu")
             }
@@ -42,8 +44,8 @@ window.addEventListener("load", (e) =>{
 
             document.getElementById("processorTable").classList.remove("hideinmenu")
 
-        }else if(overviewValue == "Long-term"){
-            
+        }else if(overviewValue == "Long-term"){ // Show longterm menu
+            document.getElementById("html_console").classList.remove("extend");
             for(i=0;i<midlist.length;i++){
                 midlist[i].classList.add("hideinmenu")
             }
@@ -56,8 +58,8 @@ window.addEventListener("load", (e) =>{
 
             document.getElementById("processorTable").classList.add("hideinmenu")
 
-        }else if(overviewValue == "Medium-term"){
-            
+        }else if(overviewValue == "Medium-term"){ // Show mediumdterm menu
+            document.getElementById("html_console").classList.remove("extend");
             for(i=0;i<midlist.length;i++){
                 midlist[i].classList.remove("hideinmenu")
             }
