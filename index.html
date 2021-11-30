@@ -16,7 +16,6 @@
                     <button id="generateJob">Generate Job</button>
                     <button id="createJob">Create Job</button>
                     <img src="images/play-button.png" alt="" id="Startsim">
-                    <!-- <img src="images/logo.gif" alt="" id="logo"> -->
                     <select name="algo" id="algo">                      
                       <option value="fcfs" selected>FCFS</option>
                         <option value="srt" >SRT</option>
@@ -29,14 +28,7 @@
 
                     <label for="" id = "interruptTimelabel">Interrupt Time: </label>
                     <input type="number" min="2" value="4" id = "interruptTimevalue">
-                    
-                    <!-- <div id="controller">Pause</div> -->
 
-                    <!-- <ul id="mainNav">
-                        <li>Home</li>
-                        <li>Visualizer</li>
-                        <li>Team</li>
-                    </ul> -->
                 </div>
 
                 <div class="create-process-panel-container">
@@ -44,7 +36,7 @@
                   <div class="nav">
                       <form action="" class="form" id="createProcessForm">
                           <h6>Process Information</h6>
-                          <input type="number" placeholder="Identifier" id="id" required>
+                          <input type="number" placeholder="Identifier" id="id" min = "0" required>
                           <input type="number" placeholder="Service Time" id="s" class= "procInfoField" min="5" max="30"required>
                           <input type="number" placeholder="Priority" id="priority" class= "procInfoField" min="0" max="5" required>
 
@@ -53,6 +45,8 @@
                               <option value="0" selected>No I/O Interrupt</option>
                               <option value="1">I/O Interrupt</option>
                           </select>
+                          <h6>Job Information</h6>
+                          <input type="number" placeholder="Job Priority" id="jpriority" class= "procInfoField" min="1" max="4" required>
                           <input type="submit" id="finish" class="gproc" value="Finish creation">
                           <input type="submit" id="generateProcess" class="gproc" value="Generate Process">
                       </form>
@@ -426,6 +420,7 @@
                           <th>s</th>
                           <th>e</th>
                           <th>w</th>
+                          <th>order</th>
                         </tr>
                       </thead>
                       <tbody id="readyBody">
@@ -436,23 +431,25 @@
                             <td></td>
                             <td></td>
                             <td></td>
+                            <td> </td>
                         </tr>
-                          <tr class="rbody" id="readydata1"><td>1</td><td></td><td></td><td></td><td></td><td></td></tr>
-                          <tr class="rbody" id="readydata2"><td>2</td><td></td><td></td><td></td><td></td><td></td></tr>
-                          <tr class="rbody" id="readydata3"><td>3</td><td></td><td></td><td></td><td></td><td></td></tr>
-                          <tr class="rbody" id="readydata4"><td>4</td><td></td><td></td><td></td><td></td><td></td></tr>
-                          <tr class="rbody" id="readydata5"><td>5</td><td></td><td></td><td></td><td></td><td></td></tr>
-                          <tr class="rbody" id="readydata6"><td>6</td><td></td><td></td><td></td><td></td><td></td></tr>
-                          <tr class="rbody" id="readydata7"><td>7</td><td></td><td></td><td></td><td></td><td></td></tr>
-                          <tr class="rbody" id="readydata8"><td>8</td><td></td><td></td><td></td><td></td><td></td></tr>
-                          <tr class="rbody" id="readydata9"><td>9</td><td></td><td></td><td></td><td></td><td></td></tr>
-                          <tr class="rbody" id="readydata10"><td>10</td><td></td><td></td><td></td><td></td><td></td></tr>
+                          <tr class="rbody" id="readydata1"><td>1</td><td></td><td></td><td></td><td></td><td></td><td> </td></tr>
+                          <tr class="rbody" id="readydata2"><td>2</td><td></td><td></td><td></td><td></td><td></td><td> </td></tr>
+                          <tr class="rbody" id="readydata3"><td>3</td><td></td><td></td><td></td><td></td><td></td><td> </td></tr>
+                          <tr class="rbody" id="readydata4"><td>4</td><td></td><td></td><td></td><td></td><td></td><td> </td></tr>
+                          <tr class="rbody" id="readydata5"><td>5</td><td></td><td></td><td></td><td></td><td></td><td> </td></tr>
+                          <tr class="rbody" id="readydata6"><td>6</td><td></td><td></td><td></td><td></td><td></td><td> </td></tr>
+                          <tr class="rbody" id="readydata7"><td>7</td><td></td><td></td><td></td><td></td><td></td><td> </td></tr>
+                          <tr class="rbody" id="readydata8"><td>8</td><td></td><td></td><td></td><td></td><td></td><td> </td></tr>
+                          <tr class="rbody" id="readydata9"><td>9</td><td></td><td></td><td></td><td></td><td></td><td> </td></tr>
+                          <tr class="rbody" id="readydata10"><td>10</td><td></td><td></td><td></td><td></td><td></td><td> </td></tr>
                           <tr class="rbody" id="readydata11"><td>11</td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
+                            <td> </td>
                             </tr>
                       </tbody>
                     </table>

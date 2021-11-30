@@ -49,10 +49,10 @@ var running = setInterval(async () => {
 
             if(readyArray[0][i] != 0){
                 readyArray[0][i].w = readyArray[0][i].w + 1
-                routput = `<tr><td>${i}</td><td>${readyArray[0][i].ID}</td><td>${readyArray[0][i].priority}</td><td>${readyArray[0][i].s}</td><td>${readyArray[0][i].e}</td><td>${readyArray[0][i].w}</td><tr>`
+                routput = `<tr><td>${i}</td><td>${readyArray[0][i].ID}</td><td>${readyArray[0][i].priority}</td><td>${readyArray[0][i].s}</td><td>${readyArray[0][i].e}</td><td>${readyArray[0][i].w}</td><td>${readyArray[0][i].o}</td><tr>`
                 readyData[i].innerHTML = routput;
             }else{
-                routput = `<tr><td>${i}</td><td> </td><td> </td><td> </td><td> </td><td> </td><tr>`
+                routput = `<tr><td>${i}</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><tr>`
                 readyData[i].innerHTML = routput;
             }
         }
@@ -153,7 +153,7 @@ function suspendedAction(){
             soutput = `<tr><td>${i}</td><td>${suspendedArray[0][0].ID}</td><td>${suspendedArray[0][0].s}</td><td>${suspendedArray[0][0].e}</td><td>${suspendedArray[0][0].w}</td><tr>`
             susData[i].innerHTML = soutput
         }else{
-            soutput = `<tr><td>${i}</td><td> </td><td> </td><td> </td><td> </td><td> </td><tr>`
+            soutput = `<tr><td>${i}</td><td> </td><td> </td><td> </td><td> </td><tr>`
             susData[i].innerHTML = soutput
         }
     }

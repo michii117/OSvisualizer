@@ -26,6 +26,7 @@ async function priority(from, into, wait){
     for(var j = 0; j < x.length; j++){
         for(var i = 0; i < into[0].length; i++){
             if(into[0][i] == 0){
+                x[j].o = order++;
                 x[j].w = x[j].w + wait;
                 into[0][i] = x[j];
                 animateMove(from[1], i, into, index);

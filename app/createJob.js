@@ -3,6 +3,7 @@ window.addEventListener("load", (e) =>{
     genJob.disabled = true;
     finc.disabled = true;
     var runt = true;
+    var jpr = document.getElementById("jpriority");    
     var cpid = document.getElementById("id");     
     var cs = document.getElementById("s"); 
     var cp = document.getElementById("priority"); 
@@ -21,13 +22,14 @@ window.addEventListener("load", (e) =>{
             runt = false;
         }
         if(runt){
-            const process = {ID: "processID"+parseInt(cpid.value), s: parseInt(cs.value), priority: parseInt(cp.value), content: [ccont.value], e: 0, w: 0, o:order++};
+            const process = {ID: "processID"+parseInt(cpid.value), s: parseInt(cs.value), priority: parseInt(cp.value), content: [ccont.value], e: 0, w: 0};
             if(process.content[0] == 1){
                 process.content.push(generaterandomNumber(1, parseInt(cs.value)-3))
             }
             cjob[2].push(process)
             cnumOfProcesses++;
             console.log("Added process!");
+            $("#createProcessForm")[0].reset();
             finc.disabled = false;
         }
         
@@ -51,7 +53,12 @@ window.addEventListener("load", (e) =>{
                     break;               
                 }
             } 
+        
         }
+        if(jpr.value!= ""){
+            cjob[1] = parseInt(jpr.value);
+        }
+
         runt = true;
         finc.disabled = true;
         cnumOfProcesses = 0;
@@ -74,4 +81,10 @@ function stateHandle() {
     }else{
         genJob.disabled = false;
     }
+
+    if(jpr.value == ""){
+        finc.disabled = true;
+    }else{
+        finc.disabled = false
+    } 
 }

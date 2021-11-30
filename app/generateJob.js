@@ -5,7 +5,7 @@ var readyArray = [[0,0,0,0,0,0,0,0,0,0,0,0],"ready"];
 var backlog = [];
 
 var id = 0;
-var order = 0;
+var order = -1;
 var jobID = 0;
 
 var batchJobs;
@@ -62,7 +62,7 @@ window.addEventListener("load", (e)=>{
         for(i=0; i< numOfProcesses; i++){
             se = generaterandomNumber(6, 31)
 
-            const process = {ID: "processID"+id++, s: se, priority: generaterandomNumber(1, 5), content: [generaterandomNumber(0, 2)], e: 0, w: 0, o:order++};
+            const process = {ID: "processID"+id++, s: se, priority: generaterandomNumber(1, 5), content: [generaterandomNumber(0, 2)], e: 0, w: 0};
             
             if(process.content[0] == 1){
                 process.content.push(generaterandomNumber(1, se-3))
